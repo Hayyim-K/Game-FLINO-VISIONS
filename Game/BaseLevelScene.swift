@@ -29,11 +29,20 @@ class BaseLevelScene: SKScene {
     
     var level = 0
     
+    var evaPrice = 50
+    var tFPrice = 33
+    
+    var deviationByX: Int = 10
+    var deviationByY: Int = 1000
+    
+    var bgColor: UIColor = #colorLiteral(red: 0.702839592, green: 0.1938713611, blue: 0.9012210876, alpha: 0.55)
+    
     private var drop: SKSpriteNode?
     
     private var dropIsActive = false
     
     private var clouds = ["cloud-1", "cloud-2", "cloud-4", "cloud-5"]
+    private var stormClouds = ["cloud-11", "cloud-22", "cloud-44", "cloud-55"]
     
     private var wildFiersCounter = 0 {
         didSet {
@@ -77,7 +86,7 @@ class BaseLevelScene: SKScene {
     
     func setBackGround() {
         let background = SKSpriteNode(
-            color: #colorLiteral(red: 0.702839592, green: 0.1938713611, blue: 0.9012210876, alpha: 0.55),
+            color: bgColor,
             size: CGSize(width: frame.width, height: frame.height)
         )
         background.position = CGPoint(x: frame.midX, y: frame.midY)
@@ -85,17 +94,25 @@ class BaseLevelScene: SKScene {
         addChild(background)
     }
     
-    func setCloud(position: CGPoint) {
-        let cloudType = clouds.randomElement()!
+    func setCloud(position: CGPoint, isStorm: Bool = false) {
+        
+        let cloudType = !isStorm ?
+        clouds.randomElement()! :
+        stormClouds.randomElement()!
+        
         let cloud = SKSpriteNode(imageNamed: cloudType)
         cloud.position = position
-        
-        cloud.size = CGSize(width: dropDiameter * 3, height: dropDiameter * 2)
-        cloud.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(dropDiameter / 2))
+        cloud.size = CGSize(
+            width: dropDiameter * 3,
+            height: dropDiameter * 2
+        )
+        cloud.physicsBody = SKPhysicsBody(
+            circleOfRadius: CGFloat(dropDiameter / 2)
+        )
         cloud.physicsBody?.pinned = true
-        cloud.physicsBody?.isDynamic = true
-        cloud.physicsBody?.restitution = 0.1
-        cloud.physicsBody?.friction = 0.2
+        cloud.physicsBody?.isDynamic = !isStorm ? true : false
+        cloud.physicsBody?.restitution = !isStorm ? 0.1 : -0.5
+        cloud.physicsBody?.friction = !isStorm ? 0.2 : 0.5
         cloud.physicsBody?.categoryBitMask = PhysicsCategory.defaultObject
         cloud.physicsBody?.collisionBitMask = PhysicsCategory.drop
         cloud.physicsBody?.contactTestBitMask = PhysicsCategory.drop
@@ -224,7 +241,7 @@ class BaseLevelScene: SKScene {
             for i in stride(from: rangeFrame, to: -rangeFrame - 1, by: -4 * dropDiameter) {
                 
                 let cloudPosition = CGPoint(x: i, y: currentYPos)
-                setCloud(position: cloudPosition)
+                setCloud(position: cloudPosition, isStorm: Bool.random())
                 
                 if maxCloudsInRange - range == 1 {
                     
@@ -281,7 +298,7 @@ class BaseLevelScene: SKScene {
         drop.physicsBody?.contactTestBitMask = PhysicsCategory.aim
         
         drop.position = CGPoint(
-            x: Double.random(in: -50...50),
+            x: Double.random(in: -dropDiameter * 2...dropDiameter * 2),
             y: frame.height / 2 - 120
         )
         drop.size = CGSize(
@@ -341,33 +358,33 @@ class BaseLevelScene: SKScene {
         label.run(sequence)
     }
     
-    @objc   func turbulenceFlowButtonTapped() {
+    @objc func turbulenceFlowButtonTapped() {
         drop?.physicsBody!.applyImpulse(
             CGVector(
-                dx: Int.random(in: -10...10),
-                dy: 1000
+                dx: Int.random(in: -deviationByX...deviationByX),
+                dy: deviationByY
             )
         )
-        score -= 33
+        score -= tFPrice
         setPointsLabel(
             position: CGPoint(
                 x: frame.width / 2 - 200,
                 y: 300 - frame.height / 2
             ),
-            text: "-33",
+            text: "-\(tFPrice)",
             color: .red
         )
     }
     
-    @objc   func refreshDrop() {
-        score -= 50
+    @objc func refreshDrop() {
+        score -= evaPrice
         
         setPointsLabel(
             position: CGPoint(
                 x: -frame.width / 2 + 200,
                 y: 300 - frame.height / 2
             ),
-            text: "-50",
+            text: "-\(evaPrice)",
             color: .red
         )
         dropIsActive = false

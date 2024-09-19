@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     private let levelManager = LevelManager.shared
     
     private var userInfo = UserDataInfo()
-//    private var level = 6
+
     private var evaCount = 0
     private var tFCount = 0
     
@@ -28,6 +28,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userInfo.bestScore = uD.fatchStatistics().bestScore
         uD.save(userInfo)
         
         NotificationCenter.default.addObserver(
@@ -67,7 +68,6 @@ class GameViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         uD.save(userInfo)
-        
     }
     
     private func setLevelView(for level: Int) {
