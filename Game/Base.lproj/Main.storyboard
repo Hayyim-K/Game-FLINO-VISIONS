@@ -1,24 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2nQ-EV-3ZM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="7ki-4c-uGh">
+            <objects>
+                <viewController id="2nQ-EV-3ZM" customClass="MenuViewController" customModule="Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hcx-dq-XbK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x4-4W-tDb">
+                                <rect key="frame" x="32" y="304.5" width="311" height="58.5"/>
+                                <color key="tintColor" red="0.048231668770313263" green="0.88042956590652466" blue="0.066577248275279999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="PLAY" cornerStyle="large">
+                                    <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
+                                        <color key="backgroundColor" red="0.048231668770313263" green="0.88042956590652466" blue="0.066577248275279999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="36"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playButtonPressed" destination="2nQ-EV-3ZM" eventType="touchUpInside" id="UDQ-Yw-Qzq"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="lAG-BC-qlb"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dza-Hz-s9c">
+                                <rect key="frame" x="16" y="585" width="343" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Red Ball" translatesAutoresizingMaskIntoConstraints="NO" id="bWZ-SW-9BU">
+                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="50"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop" translatesAutoresizingMaskIntoConstraints="NO" id="pqY-B2-dCb">
+                                        <rect key="frame" x="175.5" y="0.0" width="167.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="qmu-ej-loo"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhP-YF-qCC">
+                                <rect key="frame" x="32" y="52" width="311" height="28.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFi-V2-Rth">
+                                <rect key="frame" x="32" y="88.5" width="311" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0O5-fc-UVC"/>
+                        <color key="backgroundColor" red="0.21937248110771179" green="0.06199251115322113" blue="0.28109219670295715" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0O5-fc-UVC" firstAttribute="trailing" secondItem="FhP-YF-qCC" secondAttribute="trailing" constant="32" id="4fN-Op-6ak"/>
+                            <constraint firstAttribute="bottom" secondItem="dza-Hz-s9c" secondAttribute="bottom" constant="32" id="8Mh-P6-aCK"/>
+                            <constraint firstItem="1x4-4W-tDb" firstAttribute="centerY" secondItem="Hcx-dq-XbK" secondAttribute="centerY" id="H2e-2E-ptR"/>
+                            <constraint firstItem="CFi-V2-Rth" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="32" id="Utk-kF-UXw"/>
+                            <constraint firstItem="dza-Hz-s9c" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="16" id="ZjB-1a-dvF"/>
+                            <constraint firstItem="0O5-fc-UVC" firstAttribute="trailing" secondItem="CFi-V2-Rth" secondAttribute="trailing" constant="32" id="atG-Zw-CYY"/>
+                            <constraint firstItem="0O5-fc-UVC" firstAttribute="trailing" secondItem="1x4-4W-tDb" secondAttribute="trailing" constant="32" id="epv-wS-0lQ"/>
+                            <constraint firstItem="CFi-V2-Rth" firstAttribute="top" secondItem="FhP-YF-qCC" secondAttribute="bottom" constant="8" id="gnF-tR-Hqm"/>
+                            <constraint firstAttribute="trailing" secondItem="dza-Hz-s9c" secondAttribute="trailing" constant="16" id="mwK-7l-hbl"/>
+                            <constraint firstItem="FhP-YF-qCC" firstAttribute="top" secondItem="0O5-fc-UVC" secondAttribute="top" constant="32" id="pTS-85-zsa"/>
+                            <constraint firstItem="1x4-4W-tDb" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="32" id="txb-We-0SF"/>
+                            <constraint firstItem="FhP-YF-qCC" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="32" id="uoE-gk-dAh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bestScoreLabel" destination="FhP-YF-qCC" id="qbC-eR-5cO"/>
+                        <outlet property="lastScoreLabel" destination="CFi-V2-Rth" id="ax8-Zz-qB5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pah-ck-TOD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="93.103448275862078"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BV1-FR-VrT" customClass="GameViewController" customModule="Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7EA-hA-H1c">
+                                <rect key="frame" x="16" y="521" width="343" height="114"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Wct-yD-Doq">
+                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="114"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVA: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoM-qT-Xfp">
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1T-fl-cEv">
+                                                <rect key="frame" x="0.0" y="36.5" width="163.5" height="77.5"/>
+                                                <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" imagePlacement="bottom" title="EVAPORATION" imagePadding="6" cornerStyle="large" titleAlignment="center">
+                                                    <imageReference key="image" image="arrow.triangle.2.circlepath.icloud.fill" catalog="system" symbolScale="large"/>
+                                                    <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
+                                                        <color key="backgroundColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="evaporationButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="1HA-ZY-gZa"/>
+                                                    <action selector="playButtonPressed" destination="2nQ-EV-3ZM" eventType="touchUpInside" id="vgf-tA-qCm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vJL-Nv-bVa">
+                                        <rect key="frame" x="179.5" y="0.0" width="163.5" height="114"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TF: 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCp-6Q-vYx">
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eev-iS-n2n">
+                                                <rect key="frame" x="0.0" y="36.5" width="163.5" height="77.5"/>
+                                                <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" imagePlacement="bottom" imagePadding="4" cornerStyle="large" titleAlignment="center">
+                                                    <imageReference key="image" image="water.waves.and.arrow.up" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                    <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
+                                                        <color key="backgroundColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <string key="title">TURBULENCE
+         FLOW</string>
+                                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="16"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="playButtonPressed" destination="2nQ-EV-3ZM" eventType="touchUpInside" id="DfQ-tU-at4"/>
+                                                    <action selector="turbulenceFlowButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="eHr-tf-LsM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-Tq-Cys">
+                                <rect key="frame" x="16" y="16" width="123" height="21.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL: 9" textAlignment="right" lineBreakMode="middleTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kWk-mW-aLa">
+                                <rect key="frame" x="293.5" y="16" width="65.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7EA-hA-H1c" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="5DG-oA-LGa"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="7EA-hA-H1c" secondAttribute="bottom" constant="32" id="JBg-v9-5lr"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="kWk-mW-aLa" secondAttribute="trailing" constant="16" id="N9L-Hf-qmo"/>
+                            <constraint firstItem="Egy-Tq-Cys" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="OtP-e3-RFu"/>
+                            <constraint firstItem="Egy-Tq-Cys" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="16" id="Yaa-ok-hcZ"/>
+                            <constraint firstItem="kWk-mW-aLa" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="16" id="xsu-UO-hit"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="7EA-hA-H1c" secondAttribute="trailing" constant="16" id="y50-JT-dzx"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Clc-hE-qAF"/>
+                    <connections>
+                        <outlet property="evaLabel" destination="JoM-qT-Xfp" id="TIV-DW-aEP"/>
+                        <outlet property="levelLabel" destination="kWk-mW-aLa" id="n32-ms-x25"/>
+                        <outlet property="scoreLabel" destination="Egy-Tq-Cys" id="DeU-Oz-v8g"/>
+                        <outlet property="tfLabel" destination="cCp-6Q-vYx" id="uhp-HG-A24"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="189.59999999999999" y="92.203898050974516"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Red Ball" width="44" height="44"/>
+        <image name="arrow.triangle.2.circlepath.icloud.fill" catalog="system" width="128" height="90"/>
+        <image name="drop" width="277" height="377"/>
+        <image name="water.waves.and.arrow.up" catalog="system" width="128" height="102"/>
+    </resources>
 </document>

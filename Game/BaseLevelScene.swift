@@ -1,28 +1,23 @@
 //
-//  GameScene.swift
+//  BaseLevelScene.swift
 //  Game
 //
-//  Created by vitasiy on 21.10.2021.
+//  Created by Hayyim on 18/09/2024.
 //
 
 
 import AudioToolbox
 import SpriteKit
-import GameplayKit
+//import GameplayKit
 
-class GameScene: SKScene {
+class BaseLevelScene: SKScene {
     
-    private var drop: SKSpriteNode?
+    var maxCloudsInRange = 4
+    var minCloudsInRange = 2
     
-    private var dropIsActive = false
+    var dropDiameter: CGFloat = 80
     
-    private var clouds = ["cloud-1", "cloud-2", "cloud-4", "cloud-5"]
-    
-    private let uD = StorageManager.shared
-    
-    private var userInfo = UserDataInfo()
-    
-    private var score = 0 {
+    var score = 0 {
         willSet {
             NotificationCenter.default.post(
                 name: Notification.Name("scoreHaschanged"),
@@ -32,11 +27,20 @@ class GameScene: SKScene {
         }
     }
     
-    private var level = 0
+    var level = 0
+    
+    private var drop: SKSpriteNode?
+    
+    private var dropIsActive = false
+    
+    private var clouds = ["cloud-1", "cloud-2", "cloud-4", "cloud-5"]
     
     private var wildFiersCounter = 0 {
         didSet {
             if wildFiersCounter == 0 {
+                
+                dropIsActive = true
+                
                 NotificationCenter.default.post(
                     name: Notification.Name("levelCompleted"),
                     object: nil,
@@ -45,14 +49,9 @@ class GameScene: SKScene {
             }
         }
     }
-
+    
     
     override func didMove(to view: SKView) {
-        
-        userInfo = uD.fatchStatistics()
-        score += 1
-        score = userInfo.score
-        level = userInfo.level
         
         NotificationCenter.default.addObserver(
             self,
@@ -76,7 +75,7 @@ class GameScene: SKScene {
         
     }
     
-    private func setBackGround() {
+    func setBackGround() {
         let background = SKSpriteNode(
             color: #colorLiteral(red: 0.702839592, green: 0.1938713611, blue: 0.9012210876, alpha: 0.55),
             size: CGSize(width: frame.width, height: frame.height)
@@ -86,14 +85,13 @@ class GameScene: SKScene {
         addChild(background)
     }
     
-    private func setCloud(position: CGPoint, diameter: Int) {
+    func setCloud(position: CGPoint) {
         let cloudType = clouds.randomElement()!
         let cloud = SKSpriteNode(imageNamed: cloudType)
         cloud.position = position
         
-        //                cloud.name = cloudType
-        cloud.size = CGSize(width: diameter * 2, height: diameter * 2)
-        cloud.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(diameter / 2))
+        cloud.size = CGSize(width: dropDiameter * 3, height: dropDiameter * 2)
+        cloud.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(dropDiameter / 2))
         cloud.physicsBody?.pinned = true
         cloud.physicsBody?.isDynamic = true
         cloud.physicsBody?.restitution = 0.1
@@ -105,10 +103,19 @@ class GameScene: SKScene {
         addChild(cloud)
     }
     
-    private func setFire(on position: CGPoint) {
+    func setFire(on position: CGPoint) {
         if let wildFire = SKEmitterNode(fileNamed: "wildFire") {
             wildFire.position = position
-            wildFire.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 80, height: 100))
+            wildFire.particleSize = CGSize(
+                width: Double(dropDiameter) * 2.7,
+                height: 100.0
+            )
+            wildFire.physicsBody = SKPhysicsBody(
+                rectangleOf: CGSize(
+                    width: Double(dropDiameter) * 2.7,
+                    height: 100.0
+                )
+            )
             wildFire.physicsBody?.isDynamic = false
             wildFire.physicsBody?.categoryBitMask = PhysicsCategory.aim
             wildFire.physicsBody?.collisionBitMask = PhysicsCategory.none
@@ -120,10 +127,19 @@ class GameScene: SKScene {
         }
     }
     
-    private func setSmoke(on position: CGPoint) {
+    func setSmoke(on position: CGPoint) {
         if let smoke = SKEmitterNode(fileNamed: "smoke") {
             smoke.position = position
-            smoke.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 80, height: 100))
+            smoke.particleSize = CGSize(
+                width: 30 * 2.7,
+                height: 100.0
+            )
+            smoke.physicsBody = SKPhysicsBody(
+                rectangleOf: CGSize(
+                    width: Double(dropDiameter) * 2.7,
+                    height: 100.0
+                )
+            )
             smoke.physicsBody?.isDynamic = false
             smoke.physicsBody?.categoryBitMask = PhysicsCategory.aim
             smoke.physicsBody?.collisionBitMask = PhysicsCategory.none
@@ -135,10 +151,10 @@ class GameScene: SKScene {
         }
     }
     
-    private func setRain(on position: CGPoint) {
+    func setRain(on position: CGPoint) {
         if let rain = SKEmitterNode(fileNamed: "rain") {
             rain.position = position
-            rain.particleSize = CGSize(width: 30, height: 30)
+            rain.particleSize = CGSize(width: dropDiameter, height: 30)
             addChild(rain)
             
             let removeAfterDead = SKAction.sequence(
@@ -151,10 +167,10 @@ class GameScene: SKScene {
         }
     }
     
-    private func setSteam(on position: CGPoint) {
+    func setSteam(on position: CGPoint) {
         if let steam = SKEmitterNode(fileNamed: "boil") {
             steam.position = position
-            steam.particleSize = CGSize(width: 30, height: 30)
+            steam.particleSize = CGSize(width: dropDiameter, height: dropDiameter)
             addChild(steam)
             
             let removeAfterDead = SKAction.sequence(
@@ -167,13 +183,21 @@ class GameScene: SKScene {
         }
     }
     
-    private func setAim(on position: CGPoint) {
+    func setAim(on position: CGPoint) {
         let aim = SKSpriteNode(
             color: .clear,
-            size: CGSize(width: 120, height: 90)
+            size: CGSize(
+                width: dropDiameter * 4,
+                height: dropDiameter * 3
+            )
         )
         aim.position = position
-        aim.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 120, height: 90))
+        aim.physicsBody = SKPhysicsBody(
+            rectangleOf: CGSize(
+                width: dropDiameter * 4,
+                height: dropDiameter * 3
+            )
+        )
         aim.physicsBody?.pinned = true
         aim.physicsBody?.isDynamic = false
         
@@ -188,30 +212,26 @@ class GameScene: SKScene {
     
     
     
-    private func setBoard() {
+    func setBoard() {
         
-        let minYPos = -frame.height / 2 + 600
-        let maxCloudsInRange = 10
-        let ballDiameter = 30
+        let minYPos =  -frame.height / 2 + 600
         
-        for range in stride(from: maxCloudsInRange, to: 2, by: -1) {
+        for range in stride(from: maxCloudsInRange, to: minCloudsInRange - 1, by: -1) {
             
-            let currentYPos = CGFloat((maxCloudsInRange - range) * 3 * ballDiameter) + minYPos
-            let rangeFrame = (Float(range) - 1) / 2.0 * 4 * Float(ballDiameter)
+            let currentYPos = minYPos + CGFloat((maxCloudsInRange - range)) * dropDiameter * 3
+            let rangeFrame = (CGFloat(range) - 1) / 2.0 * 4 * dropDiameter
             
-            for i in stride(from: rangeFrame, to: -rangeFrame - 1, by: Float(-4 * ballDiameter)) {
+            for i in stride(from: rangeFrame, to: -rangeFrame - 1, by: -4 * dropDiameter) {
                 
-                let cloudPosition = CGPoint(x: CGFloat(i), y: currentYPos)
-                setCloud(position: cloudPosition, diameter: ballDiameter)
+                let cloudPosition = CGPoint(x: i, y: currentYPos)
+                setCloud(position: cloudPosition)
                 
                 if maxCloudsInRange - range == 1 {
                     
-                    
-                    
-                    let aimPosition = CGPoint(x: CGFloat(i), y: minYPos - 100)
+                    let aimPosition = CGPoint(x: i, y: minYPos - 210)
                     setAim(on: aimPosition)
                     
-                    let firePosition = CGPoint(x: CGFloat(i), y: minYPos - 130)
+                    let firePosition = CGPoint(x: i, y: minYPos - 240)
                     setFire(on: firePosition)
                     
                     setSmoke(on: aimPosition)
@@ -223,11 +243,11 @@ class GameScene: SKScene {
         setFrame()
     }
     
-    private func setFrame() {
+    func setFrame() {
         physicsBody = SKPhysicsBody(
             edgeLoopFrom: frame.inset(
                 by: UIEdgeInsets(
-                    top: 460,
+                    top: 330,
                     left: 1,
                     bottom: 50,
                     right: 1
@@ -236,7 +256,7 @@ class GameScene: SKScene {
         )
     }
     
-    private func setDrop() {
+    func setDrop() {
         drop?.removeFromParent()
         
         guard !dropIsActive else { return }
@@ -245,7 +265,10 @@ class GameScene: SKScene {
         guard let drop = drop else { return }
         drop.physicsBody = SKPhysicsBody(
             texture: SKTexture(imageNamed: "drop"),
-            size: CGSize(width: 30, height: 41)
+            size: CGSize(
+                width: dropDiameter,
+                height: dropDiameter * 1.37
+            )
         )
         drop.physicsBody?.affectedByGravity = true
         drop.physicsBody?.isDynamic = true
@@ -261,14 +284,17 @@ class GameScene: SKScene {
             x: Double.random(in: -50...50),
             y: frame.height / 2 - 120
         )
-        drop.size = CGSize(width: 30, height: 41)
+        drop.size = CGSize(
+            width: dropDiameter,
+            height: dropDiameter * 1.37
+        )
         
         addChild(drop)
         
         dropIsActive = true
     }
     
-    private func setPointsLabel(
+    func setPointsLabel(
         position: CGPoint,
         text: String,
         color: UIColor,
@@ -306,7 +332,7 @@ class GameScene: SKScene {
         let sequence = SKAction.sequence(
             [
                 appear,
-                SKAction.wait(forDuration: 0.25),
+                SKAction.wait(forDuration: 0.2),
                 disappear,
                 SKAction.removeFromParent()
             ]
@@ -315,7 +341,7 @@ class GameScene: SKScene {
         label.run(sequence)
     }
     
-    @objc private func turbulenceFlowButtonTapped() {
+    @objc   func turbulenceFlowButtonTapped() {
         drop?.physicsBody!.applyImpulse(
             CGVector(
                 dx: Int.random(in: -10...10),
@@ -333,7 +359,7 @@ class GameScene: SKScene {
         )
     }
     
-    @objc private func refreshDrop() {
+    @objc   func refreshDrop() {
         score -= 50
         
         setPointsLabel(
@@ -358,7 +384,7 @@ class GameScene: SKScene {
     
 }
 
-extension GameScene: SKPhysicsContactDelegate {
+extension BaseLevelScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         
@@ -413,7 +439,7 @@ extension GameScene: SKPhysicsContactDelegate {
             score += 1
             
             UISelectionFeedbackGenerator().selectionChanged()
- 
+            
         } else if bodyB.categoryBitMask == PhysicsCategory.drop &&
                     bodyA.categoryBitMask == PhysicsCategory.defaultObject
         {
