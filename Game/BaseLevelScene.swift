@@ -17,22 +17,24 @@ class BaseLevelScene: SKScene {
     
     var dropDiameter: CGFloat = 80
     
-    var score = 0 {
+    var score: Int! {
         willSet {
             NotificationCenter.default.post(
                 name: Notification.Name("scoreHaschanged"),
                 object: nil,
-                userInfo: ["score": score, "level": level]
+                userInfo: ["score": score ?? 0, "level": level ?? 0]
             )
         }
     }
     
-    var level = 0
+    var level: Int!
     
     var evaPrice = 50
     var tFPrice = 33
+    var cloudCollisionPrice = 1
+    var stormCloudCollisionPrice = 2
     
-    var deviationByX: Int = 10
+    var deviationByX: Int = 100
     var deviationByY: Int = 1000
     
     var bgColor: UIColor = #colorLiteral(red: 0.702839592, green: 0.1938713611, blue: 0.9012210876, alpha: 0.55)
@@ -40,9 +42,26 @@ class BaseLevelScene: SKScene {
     private var drop: SKSpriteNode?
     
     private var dropIsActive = false
+    private var collisionOccurred = false
+    
+    private var cloudCollisionsCounter = 0
     
     private var clouds = ["cloud-1", "cloud-2", "cloud-4", "cloud-5"]
     private var stormClouds = ["cloud-11", "cloud-22", "cloud-44", "cloud-55"]
+    
+    private var currentCloudName = "" {
+        didSet {
+            if oldValue == currentCloudName {
+                cloudCollisionsCounter += 1
+                
+                collisionOccurred =
+                cloudCollisionsCounter > 1 ?
+                true :
+                false
+                
+            } else { cloudCollisionsCounter = 0 }
+        }
+    }
     
     private var wildFiersCounter = 0 {
         didSet {
@@ -53,7 +72,7 @@ class BaseLevelScene: SKScene {
                 NotificationCenter.default.post(
                     name: Notification.Name("levelCompleted"),
                     object: nil,
-                    userInfo: ["score": score, "level": level]
+                    userInfo: ["score": score ?? 0, "level": level ?? 0]
                 )
             }
         }
@@ -101,6 +120,8 @@ class BaseLevelScene: SKScene {
         stormClouds.randomElement()!
         
         let cloud = SKSpriteNode(imageNamed: cloudType)
+        
+        cloud.name = "\(cloudType)_\(UUID())"
         cloud.position = position
         cloud.size = CGSize(
             width: dropDiameter * 3,
@@ -111,7 +132,7 @@ class BaseLevelScene: SKScene {
         )
         cloud.physicsBody?.pinned = true
         cloud.physicsBody?.isDynamic = !isStorm ? true : false
-        cloud.physicsBody?.restitution = !isStorm ? 0.1 : -0.5
+        cloud.physicsBody?.restitution = !isStorm ? 0.1 : 0
         cloud.physicsBody?.friction = !isStorm ? 0.2 : 0.5
         cloud.physicsBody?.categoryBitMask = PhysicsCategory.defaultObject
         cloud.physicsBody?.collisionBitMask = PhysicsCategory.drop
@@ -171,7 +192,10 @@ class BaseLevelScene: SKScene {
     func setRain(on position: CGPoint) {
         if let rain = SKEmitterNode(fileNamed: "rain") {
             rain.position = position
-            rain.particleSize = CGSize(width: dropDiameter, height: 30)
+            rain.particleSize = CGSize(
+                width: dropDiameter * 1.5,
+                height: dropDiameter * 1.5
+            )
             addChild(rain)
             
             let removeAfterDead = SKAction.sequence(
@@ -276,6 +300,9 @@ class BaseLevelScene: SKScene {
     func setDrop() {
         drop?.removeFromParent()
         
+        score += 1
+        score -= 1
+        
         guard !dropIsActive else { return }
         
         drop = SKSpriteNode(imageNamed: "drop")
@@ -311,7 +338,7 @@ class BaseLevelScene: SKScene {
         dropIsActive = true
     }
     
-    func setPointsLabel(
+    private func setPointsLabel(
         position: CGPoint,
         text: String,
         color: UIColor,
@@ -321,8 +348,11 @@ class BaseLevelScene: SKScene {
         let label = SKLabelNode(fontNamed: "HelveticaNeue-Light")
         label.fontSize = size
         label.fontColor = color
-        label.position = position
-        label.zRotation = CGFloat.random(in: -45...45) * .pi / 180
+        label.position = CGPoint(
+            x: position.x - label.frame.width / 2,
+            y: position.y
+        )
+        label.zRotation = CGFloat.random(in: -30...30) * .pi / 180
         
         label.text = text
         label.zPosition = 1
@@ -348,8 +378,8 @@ class BaseLevelScene: SKScene {
         
         let sequence = SKAction.sequence(
             [
+                SKAction.wait(forDuration: 0.5),
                 appear,
-                SKAction.wait(forDuration: 0.2),
                 disappear,
                 SKAction.removeFromParent()
             ]
@@ -358,22 +388,55 @@ class BaseLevelScene: SKScene {
         label.run(sequence)
     }
     
-    @objc func turbulenceFlowButtonTapped() {
+    private func setCollision(with cloud: SKNode?) {
+        
+        guard let position = cloud?.position
+        else { return }
+        
+        if cloud?.physicsBody?.isDynamic == false {
+            score -= stormCloudCollisionPrice
+            
+            setPointsLabel(
+                position: position,
+                text: "-\(stormCloudCollisionPrice)",
+                color: .red
+            )
+        } else {
+            cloud?.run(
+                SKAction.init(named: "Pulse")!,
+                withKey: "fadeInOut"
+            )
+            score += cloudCollisionPrice
+            
+            setPointsLabel(
+                position: position,
+                text: "+\(cloudCollisionPrice)",
+                color: .green
+            )
+            setRain(on: position)
+        }
+    }
+    
+    @objc func turbulenceFlowButtonTapped(_ notification: Notification) {
+        
+        let tag = notification.userInfo!["tag"] as! Int
         drop?.physicsBody!.applyImpulse(
             CGVector(
-                dx: Int.random(in: -deviationByX...deviationByX),
+                dx: tag == 0 ? deviationByX : -deviationByX,
                 dy: deviationByY
             )
         )
         score -= tFPrice
+        
         setPointsLabel(
             position: CGPoint(
-                x: frame.width / 2 - 200,
-                y: 300 - frame.height / 2
+                x: 50 - frame.width / 2,
+                y: frame.height / 2 - 350
             ),
             text: "-\(tFPrice)",
             color: .red
         )
+
     }
     
     @objc func refreshDrop() {
@@ -381,8 +444,8 @@ class BaseLevelScene: SKScene {
         
         setPointsLabel(
             position: CGPoint(
-                x: -frame.width / 2 + 200,
-                y: 300 - frame.height / 2
+                x: 55 - frame.width / 2,
+                y: frame.height / 2 - 370
             ),
             text: "-\(evaPrice)",
             color: .red
@@ -407,7 +470,9 @@ extension BaseLevelScene: SKPhysicsContactDelegate {
         
         let bodyA = contact.bodyA
         let bodyB = contact.bodyB
+        let position = contact.contactPoint
         
+        // collisions with fires
         if bodyA.categoryBitMask == PhysicsCategory.drop &&
             bodyB.categoryBitMask == PhysicsCategory.aim ||
             bodyB.categoryBitMask == PhysicsCategory.drop &&
@@ -418,12 +483,12 @@ extension BaseLevelScene: SKPhysicsContactDelegate {
                 bodyA.node?.removeFromParent()
                 bodyB.node?.removeFromParent()
                 
-                setSteam(on: contact.contactPoint)
+                setSteam(on: position)
                 
                 score += 100
                 
                 setPointsLabel(
-                    position: contact.contactPoint,
+                    position: position,
                     text: "+100",
                     color: .green
                 )
@@ -445,29 +510,21 @@ extension BaseLevelScene: SKPhysicsContactDelegate {
             
         }
         
-        if bodyA.categoryBitMask == PhysicsCategory.drop &&
-            bodyB.categoryBitMask == PhysicsCategory.defaultObject
+        // collisions with clouds
+        if bodyA.categoryBitMask == PhysicsCategory.drop,
+           bodyB.categoryBitMask == PhysicsCategory.defaultObject
         {
+            if let cloudName = bodyB.node?.name {
+                currentCloudName = cloudName
+            }
             
-            bodyB.node?.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+            if !collisionOccurred {
+                setCollision(with: bodyB.node)
+            }
             
-            let position = bodyB.node?.position ?? contact.contactPoint
-            setRain(on: position)
-            score += 1
-            
-            UISelectionFeedbackGenerator().selectionChanged()
-            
-        } else if bodyB.categoryBitMask == PhysicsCategory.drop &&
-                    bodyA.categoryBitMask == PhysicsCategory.defaultObject
-        {
-            bodyA.node?.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-            
-            let position = contact.contactPoint
-            
-            setRain(on: position)
-            score += 1
             UISelectionFeedbackGenerator().selectionChanged()
         }
         
     }
+    
 }

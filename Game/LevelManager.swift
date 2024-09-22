@@ -33,7 +33,7 @@ class LevelManager {
             
             view.presentScene(
                 scene,
-                transition: SKTransition.fade(withDuration: 1)
+                transition: SKTransition.fade(withDuration: 2)
             )
         }
     }

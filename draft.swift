@@ -8,6 +8,21 @@
 import Foundation
 
 /*
+ 
+ else if bodyB.categoryBitMask == PhysicsCategory.drop,
+ //                  bodyA.categoryBitMask == PhysicsCategory.defaultObject,
+ //                  !collisionOccurred
+ //        {
+ //            print("there")
+ //            print(collisionOccurred)
+ //            setCollision(with: bodyA.node)
+ //            UISelectionFeedbackGenerator().selectionChanged()
+ ////            collisionOccurred.toggle()
+ //        }
+ 
+ 
+ 
+ __________
  // Load the SKScene from 'GameScene.sks'
  if let scene = SKScene(fileNamed: "Level1Scene") as? BaseLevelScene {
      

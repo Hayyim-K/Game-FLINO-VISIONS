@@ -12,107 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>203</string>
+					<string>256</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>202</string>
+					<string>255</string>
 					<key>Timestamp</key>
-					<string>748479380.766444</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>Game/GameViewController.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>        userInfo.score = score
-</string>
-				<key>leading</key>
-				<string>        scoreLabel.animatePulseAndColorChange(.red)
-        
-</string>
-				<key>trailing</key>
-				<string>        userInfo.level = level
-        
-        if userInfo.score &gt; userInfo.bestScore {
-</string>
-			</dict>
-			<key>title</key>
-			<string>make this info visible for User when he enters the game</string>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
-					<string>321</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>320</string>
-					<key>Timestamp</key>
-					<string>748449814.980991</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>Game/GameScene.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>                dx: Int.random(in: -10...10),
-</string>
-				<key>leading</key>
-				<string>        drop?.physicsBody!.applyImpulse(
-            CGVector(
-</string>
-				<key>trailing</key>
-				<string>                dy: 1000
-            )
-        )
-</string>
-			</dict>
-			<key>title</key>
-			<string>different values for different levels</string>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
-					<string>232</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>231</string>
-					<key>Timestamp</key>
-					<string>748478516.514205</string>
+					<string>748644569.271858</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -153,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>244</string>
+					<string>268</string>
 					<key>StartingColumnNumber</key>
-					<string>73</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>243</string>
+					<string>267</string>
 					<key>Timestamp</key>
-					<string>748479399.513388</string>
+					<string>748644569.271811</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -175,12 +81,12 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>
+				<string>                setCloud(position: cloudPosition, isStorm: Bool.random())
 </string>
 				<key>leading</key>
 				<string>                
                 let cloudPosition = CGPoint(x: i, y: currentYPos)
-                setCloud(position: cloudPosition, isStorm: Bool.random())</string>
+</string>
 				<key>trailing</key>
 				<string>                
                 if maxCloudsInRange - range == 1 {
@@ -188,7 +94,54 @@
 </string>
 			</dict>
 			<key>title</key>
-			<string>temp</string>
+			<string>temp - make it availible to set for different levels</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>23</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>22</string>
+					<key>Timestamp</key>
+					<string>748715562.108495</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Game/GameViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>    private var userInfo = UserDataInfo()
+</string>
+				<key>leading</key>
+				<string>    private let levelManager = LevelManager.shared
+    
+</string>
+				<key>trailing</key>
+				<string>
+    private var evaCount = 0
+    private var tFCount = 0
+</string>
+			</dict>
+			<key>title</key>
+			<string>Method 'self' was used as a property; add () to call it</string>
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>

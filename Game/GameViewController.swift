@@ -14,7 +14,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var evaLabel: UILabel!
-    @IBOutlet weak var tfLabel: UILabel!
+
+    @IBOutlet var tFLabels: [UILabel]!
     
     private let uD = StorageManager.shared
     private let levelManager = LevelManager.shared
@@ -47,8 +48,8 @@ class GameViewController: UIViewController {
         
         scoreLabel.text = "SCORE: \(userInfo.score)"
         levelLabel.text = "LEVEL: \(userInfo.level)"
-        evaLabel.text = "Evaporations: \(userInfo.evaCounter)"
-        tfLabel.text = "Turbulence Flows: \(userInfo.tFCounter)"
+        evaLabel.text = "EVA: \(userInfo.evaCounter)"
+        tFLabels.forEach{ $0.text = "TF: \(userInfo.tFCounter)" }
         
         setLevelView(for: userInfo.level)
         
@@ -155,14 +156,21 @@ class GameViewController: UIViewController {
         
         setLabels(notification)
         
-        let alert = UIAlertController(
+        let alert = userInfo.score > 0 ?
+        UIAlertController(
             title: "LEVEL COMPETED",
             message: "Your Score: \(userInfo.score)",
             preferredStyle: .alert
+        ) :
+        UIAlertController(
+            title: "LEVEL NOT COMPETED",
+            message: "Your Score Is Below Zero!",
+            preferredStyle: .alert
         )
         
+        
         let okAction = UIAlertAction(
-            title: "NEXT LEVEL",
+            title: userInfo.score > 0 ? "NEXT LEVEL" : "TRY AGAIN",
             style: .default
         ) { [weak self] _ in
             // segue to the next lvl VC with gravity
@@ -170,21 +178,15 @@ class GameViewController: UIViewController {
             
             guard let strongSelf = self
             else { return }
-            strongSelf.userInfo.level += 1
+            
+            strongSelf.userInfo.level += strongSelf.userInfo.score > 0 ? 1 : 0
+            
+            if strongSelf.userInfo.score < 0 { strongSelf.userInfo.score = 0}
+            
             strongSelf.uD.save(strongSelf.userInfo)
 
             strongSelf.setLevelView(for: strongSelf.userInfo.level)
-            
-//            if let view = strongSelf.view as! SKView? {
-//                if let scene = SKScene(fileNamed: "GameScene") {
-//                    scene.scaleMode = .aspectFit
-//                    view.presentScene(scene)
-//                }
-//                view.ignoresSiblingOrder = true
-//                view.showsFPS = false
-//                view.showsNodeCount = false
-//                
-//            }
+
         }
         
         alert.addAction(okAction)
@@ -214,8 +216,8 @@ class GameViewController: UIViewController {
         
         scoreLabel.text = "SCORE: \(userInfo.score)"
         levelLabel.text = "LEVEL: \(userInfo.level)"
-        evaLabel.text = "Evaporations: \(userInfo.evaCounter)"
-        tfLabel.text = "Turbulence Flows: \(userInfo.tFCounter)"
+        evaLabel.text = "EVA: \(userInfo.evaCounter)"
+        tFLabels.forEach{ $0.text = "TF: \(userInfo.tFCounter)" }
         
         
         
@@ -242,11 +244,12 @@ class GameViewController: UIViewController {
     }
     
     
-    @IBAction func turbulenceFlowButtonPressed(_ sender: Any) {
+    @IBAction func turbulenceFlowButtonPressed(_ sender: UIButton) {
         tFCount += 1
         NotificationCenter.default.post(
             name: Notification.Name("turbulenceFlowButtonTapped"),
-            object: nil
+            object: nil,
+            userInfo: ["tag": sender.tag]
         )
     }
     
