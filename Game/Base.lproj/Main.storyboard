@@ -35,6 +35,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhP-YF-qCC">
                                 <rect key="frame" x="32" y="52" width="311" height="28.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.088975694444444448" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -43,6 +44,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFi-V2-Rth">
                                 <rect key="frame" x="32" y="88.5" width="311" height="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.088975694444444448" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -90,150 +92,182 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7EA-hA-H1c">
-                                <rect key="frame" x="16" y="507.5" width="343" height="127.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFC-Di-vuh">
+                                <rect key="frame" x="0.0" y="540.5" width="375" height="126.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5iF-0L-vXX">
-                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="127.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7EA-hA-H1c">
+                                        <rect key="frame" x="8" y="12" width="359" height="102.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TF: 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fl-er-w9Y">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="21.5"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh9-PU-HFg">
-                                                <rect key="frame" x="0.0" y="37.5" width="103.5" height="90"/>
-                                                <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" imagePlacement="top" subtitle="⬈" imagePadding="4" titlePadding="-14" cornerStyle="large" titleAlignment="center">
-                                                    <imageReference key="image" image="water.waves.and.arrow.up" catalog="system" symbolScale="large" renderingMode="template" variableValue="1"/>
-                                                    <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
-                                                        <color key="backgroundColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </backgroundConfiguration>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="bold"/>
-                                                    <string key="title">TURBULENCE
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="5iF-0L-vXX">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="102.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TF: 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fl-er-w9Y">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="shadowOffset" width="1" height="1"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh9-PU-HFg">
+                                                        <rect key="frame" x="0.0" y="28" width="109" height="74.5"/>
+                                                        <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="top" subtitle="⬈" imagePadding="4" titlePadding="-14" cornerStyle="large" titleAlignment="center">
+                                                            <imageReference key="image" image="water.waves.and.arrow.up" catalog="system" symbolScale="large" renderingMode="template" variableValue="1"/>
+                                                            <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
+                                                                <color key="backgroundColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </backgroundConfiguration>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="bold"/>
+                                                            <string key="title">TURBULENCE
 FLOW</string>
-                                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="10"/>
-                                                    <fontDescription key="subtitleFontDescription" style="UICTFontTextStyleTitle0"/>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="turbulenceFlowButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ncv-ff-gqM"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Wct-yD-Doq">
-                                        <rect key="frame" x="119.5" y="0.0" width="104" height="127.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1T-fl-cEv">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="90"/>
-                                                <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" imagePlacement="bottom" title="EVAPORATION" imagePadding="6" cornerStyle="large" titleAlignment="center">
-                                                    <imageReference key="image" image="arrow.triangle.2.circlepath.icloud.fill" catalog="system" symbolScale="large"/>
-                                                    <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
-                                                        <color key="backgroundColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="10"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="evaporationButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="1HA-ZY-gZa"/>
-                                                    <action selector="playButtonPressed" destination="2nQ-EV-3ZM" eventType="touchUpInside" id="vgf-tA-qCm"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVA: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoM-qT-Xfp">
-                                                <rect key="frame" x="0.0" y="106" width="104" height="21.5"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vJL-Nv-bVa">
-                                        <rect key="frame" x="239.5" y="0.0" width="103.5" height="127.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TF: 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCp-6Q-vYx">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="21.5"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
-                                            </label>
-                                            <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eev-iS-n2n">
-                                                <rect key="frame" x="0.0" y="37.5" width="103.5" height="90"/>
-                                                <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" imagePlacement="top" subtitle="⬉" imagePadding="4" titlePadding="-14" cornerStyle="large" titleAlignment="center">
-                                                    <imageReference key="image" image="water.waves.and.arrow.up" catalog="system" symbolScale="large" renderingMode="template" variableValue="1"/>
-                                                    <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
-                                                        <color key="backgroundColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </backgroundConfiguration>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="bold"/>
-                                                    <string key="title">TURBULENCE
+                                                            <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="10"/>
+                                                            <fontDescription key="subtitleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="turbulenceFlowButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ncv-ff-gqM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Wct-yD-Doq">
+                                                <rect key="frame" x="125" y="0.0" width="109" height="102.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1T-fl-cEv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="66.5"/>
+                                                        <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="bottom" title="EVAPORATION" imagePadding="6" cornerStyle="large" titleAlignment="center">
+                                                            <imageReference key="image" image="arrow.triangle.2.circlepath.icloud.fill" catalog="system" symbolScale="large"/>
+                                                            <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
+                                                                <color key="backgroundColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </backgroundConfiguration>
+                                                            <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="evaporationButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="1HA-ZY-gZa"/>
+                                                            <action selector="playButtonPressed" destination="2nQ-EV-3ZM" eventType="touchUpInside" id="vgf-tA-qCm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVA: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoM-qT-Xfp">
+                                                        <rect key="frame" x="0.0" y="82.5" width="109" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="shadowOffset" width="1" height="1"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="vJL-Nv-bVa">
+                                                <rect key="frame" x="250" y="0.0" width="109" height="102.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TF: 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCp-6Q-vYx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="shadowOffset" width="1" height="1"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eev-iS-n2n">
+                                                        <rect key="frame" x="0.0" y="28" width="109" height="74.5"/>
+                                                        <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="top" subtitle="⬉" imagePadding="4" titlePadding="-14" cornerStyle="large" titleAlignment="center">
+                                                            <imageReference key="image" image="water.waves.and.arrow.up" catalog="system" symbolScale="large" renderingMode="template" variableValue="1"/>
+                                                            <backgroundConfiguration key="background" strokeWidth="6" strokeOutset="6">
+                                                                <color key="backgroundColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </backgroundConfiguration>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="bold"/>
+                                                            <string key="title">TURBULENCE
 FLOW</string>
-                                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="10"/>
-                                                    <fontDescription key="subtitleFontDescription" style="UICTFontTextStyleTitle0"/>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="turbulenceFlowButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="eHr-tf-LsM"/>
-                                                </connections>
-                                            </button>
+                                                            <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="10"/>
+                                                            <fontDescription key="subtitleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="turbulenceFlowButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="eHr-tf-LsM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="0.1514945652173913" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7EA-hA-H1c" secondAttribute="trailing" constant="8" id="LAG-F1-rl1"/>
+                                    <constraint firstAttribute="bottom" secondItem="7EA-hA-H1c" secondAttribute="bottom" constant="12" id="dY7-0z-fGO"/>
+                                    <constraint firstItem="7EA-hA-H1c" firstAttribute="centerX" secondItem="pFC-Di-vuh" secondAttribute="centerX" id="lxw-sa-11T"/>
+                                    <constraint firstItem="7EA-hA-H1c" firstAttribute="centerY" secondItem="pFC-Di-vuh" secondAttribute="centerY" id="mrh-d1-gzl"/>
+                                    <constraint firstItem="7EA-hA-H1c" firstAttribute="leading" secondItem="pFC-Di-vuh" secondAttribute="leading" constant="8" id="sbE-JF-Ncf"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cloud-4" translatesAutoresizingMaskIntoConstraints="NO" id="pIt-kQ-YgJ">
                                 <rect key="frame" x="-319" y="-214.5" width="1013" height="367"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pIt-kQ-YgJ" secondAttribute="height" multiplier="827:300" id="pDq-kl-LJt"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-Tq-Cys">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-Tq-Cys">
                                 <rect key="frame" x="16" y="16" width="161" height="26"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                <color key="textColor" red="0.017290296033024788" green="0.0074072880670428276" blue="0.015548516996204853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <lineBreakStrategy key="lineBreakStrategy"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL: 99" textAlignment="right" lineBreakMode="middleTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kWk-mW-aLa">
-                                <rect key="frame" x="257.5" y="16" width="101.5" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.088975694444444448" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <lineBreakStrategy key="lineBreakStrategy"/>
                                 <size key="shadowOffset" width="1" height="-1"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL: 99" textAlignment="right" lineBreakMode="middleTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kWk-mW-aLa">
+                                <rect key="frame" x="257.5" y="16" width="101.5" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.088975694444444448" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <lineBreakStrategy key="lineBreakStrategy"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DLy-g5-1Vs">
+                                <rect key="frame" x="275" y="108" width="100" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DAV-4s-mDp"/>
+                                    <constraint firstAttribute="height" constant="100" id="S0T-KK-aQC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7EA-hA-H1c" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="5DG-oA-LGa"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="7EA-hA-H1c" secondAttribute="bottom" constant="32" id="JBg-v9-5lr"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="pFC-Di-vuh" secondAttribute="bottom" id="65B-gw-L3Y"/>
+                            <constraint firstItem="pFC-Di-vuh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="IF5-xK-Ip6"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="kWk-mW-aLa" secondAttribute="trailing" constant="16" id="N9L-Hf-qmo"/>
                             <constraint firstItem="Egy-Tq-Cys" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="OtP-e3-RFu"/>
                             <constraint firstItem="Egy-Tq-Cys" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="16" id="Yaa-ok-hcZ"/>
+                            <constraint firstItem="DLy-g5-1Vs" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" id="a5d-lY-QRl"/>
+                            <constraint firstItem="pFC-Di-vuh" firstAttribute="height" secondItem="3se-qz-xqx" secondAttribute="height" multiplier="0.19" id="aIW-Az-cuL"/>
                             <constraint firstItem="pIt-kQ-YgJ" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="cqW-B9-pjM"/>
                             <constraint firstItem="pIt-kQ-YgJ" firstAttribute="centerY" secondItem="Egy-Tq-Cys" secondAttribute="centerY" constant="-60" id="fcO-T8-A5B"/>
                             <constraint firstItem="pIt-kQ-YgJ" firstAttribute="width" secondItem="3se-qz-xqx" secondAttribute="width" multiplier="2.7" id="pBf-hw-u92"/>
                             <constraint firstItem="kWk-mW-aLa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Egy-Tq-Cys" secondAttribute="trailing" constant="16" id="qkh-wA-Phn"/>
                             <constraint firstItem="kWk-mW-aLa" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="16" id="xsu-UO-hit"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="7EA-hA-H1c" secondAttribute="trailing" constant="16" id="y50-JT-dzx"/>
+                            <constraint firstAttribute="trailing" secondItem="pFC-Di-vuh" secondAttribute="trailing" id="zLC-bb-Ozl"/>
+                            <constraint firstItem="DLy-g5-1Vs" firstAttribute="top" secondItem="kWk-mW-aLa" secondAttribute="bottom" constant="65" id="zOx-Kx-3LS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Clc-hE-qAF"/>
                     <connections>
                         <outlet property="evaLabel" destination="JoM-qT-Xfp" id="TIV-DW-aEP"/>
+                        <outlet property="gravityDirectionImage" destination="DLy-g5-1Vs" id="gnU-Mt-CMD"/>
                         <outlet property="levelLabel" destination="kWk-mW-aLa" id="n32-ms-x25"/>
                         <outlet property="scoreLabel" destination="Egy-Tq-Cys" id="DeU-Oz-v8g"/>
                         <outletCollection property="tFLabels" destination="0Fl-er-w9Y" collectionClass="NSMutableArray" id="xLS-hJ-3AW"/>
@@ -246,6 +280,7 @@ FLOW</string>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="arrow.triangle.2.circlepath.icloud.fill" catalog="system" width="128" height="90"/>
         <image name="cloud-4" width="827" height="456.5"/>
         <image name="water.waves.and.arrow.up" catalog="system" width="128" height="102"/>

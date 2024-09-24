@@ -9,6 +9,42 @@ import Foundation
 
 /*
  
+ 
+ //    private func configureTF(_ x: Int, _ y: Int) {
+ //        switch (x, y) {
+ //        case (8, 0):
+ //            deviationByX = 1000
+ //            deviationByY = 100
+ //        case (0, 8): gravityDirectionImage.image = UIImage(systemName: "arrow.down")
+ //        case (8, 8): gravityDirectionImage.image = UIImage(systemName: "arrow.down.right")
+ //        case (-8, -8): gravityDirectionImage.image = UIImage(systemName: "arrow.up.left")
+ //        case (-8, 0): gravityDirectionImage.image = UIImage(systemName: "arrow.left")
+ //        case (0, -8): gravityDirectionImage.image = UIImage(systemName: "arrow.up")
+ //        default: gravityDirectionImage.image = UIImage(systemName: "arrow.down")
+ //        }
+ //    }
+ //    ________________
+ 
+ //            let dropDiameter: CGFloat
+ //            let isGravityDiviation: Bool
+ //            let xGravity: Double
+ //            let yGravity: Double
+ //            let maxCloudsInRange: Int
+ //            let minCloudsInRange: Int
+ //            let score: Int
+ //
+ //            let evaPrice: Int
+ //            let tFPrice: Int
+ //            let cloudCollisionPrice: Int
+ //            let stormCloudCollisionPrice: Int
+ //            let deviationByX: Int
+ //            let deviationByY: Int
+ //            let bgColor: UIColor
+ 
+ 
+ 
+ __________
+ 
  else if bodyB.categoryBitMask == PhysicsCategory.drop,
  //                  bodyA.categoryBitMask == PhysicsCategory.defaultObject,
  //                  !collisionOccurred

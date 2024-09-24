@@ -1,5 +1,5 @@
 //
-//  Level1Class.swift
+//  LevelSceneClasses.swift
 //  Game
 //
 //  Created by Hayyim on 19/09/2024.
@@ -36,5 +36,9 @@ class Level7Scene: BaseLevelScene {
 }
 
 class Level8Scene: BaseLevelScene {
+    
+}
+
+class Level9Scene: BaseLevelScene {
     
 }

@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>256</string>
+					<string>354</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>255</string>
+					<string>353</string>
 					<key>Timestamp</key>
-					<string>748644569.271858</string>
+					<string>748817946.911229</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>268</string>
+					<string>366</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>267</string>
+					<string>365</string>
 					<key>Timestamp</key>
-					<string>748644569.271811</string>
+					<string>748817946.911114</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -106,13 +106,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>23</string>
+					<string>25</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>22</string>
+					<string>24</string>
 					<key>Timestamp</key>
-					<string>748715562.108495</string>
+					<string>748792171.195841</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -142,6 +142,100 @@
 			</dict>
 			<key>title</key>
 			<string>Method 'self' was used as a property; add () to call it</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>295</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>294</string>
+					<key>Timestamp</key>
+					<string>748858938.194286</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Game/GameViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>
+</string>
+				<key>leading</key>
+				<string>                xGravity = 10
+                yGravity = 10
+</string>
+				<key>trailing</key>
+				<string>                evaPrice = 50
+                tFPrice = 15
+                cloudCollisionPrice = 1
+</string>
+			</dict>
+			<key>title</key>
+			<string>temp</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>108</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>107</string>
+					<key>Timestamp</key>
+					<string>748817946.91122</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Game/BaseLevelScene.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            Timer.scheduledTimer(
+</string>
+				<key>leading</key>
+				<string>        
+        if isGravityDiviation, isFixedGravity {
+</string>
+				<key>trailing</key>
+				<string>                withTimeInterval: 10,
+                repeats: true) { [weak self] _ in
+                    self?.setGravityDistination() 
+</string>
+			</dict>
+			<key>title</key>
+			<string>here, only here. add TF power vector updater</string>
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
