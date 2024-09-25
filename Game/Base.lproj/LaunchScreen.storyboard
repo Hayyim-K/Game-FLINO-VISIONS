@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
@@ -13,20 +13,34 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="backGround" translatesAutoresizingMaskIntoConstraints="NO" id="xjx-pE-51t">
-                                <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="backGround" translatesAutoresizingMaskIntoConstraints="NO" id="xjx-pE-51t">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOh-nY-Vhm">
+                                <rect key="frame" x="16" y="455" width="343" height="132"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.088975694440000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">FLINO
+VISIONS</string>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="53"/>
+                                <color key="textColor" red="0.22368628888768471" green="0.12508732080000001" blue="0.65508520599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.99754136800000004" green="0.43876111509999999" blue="0.76065701249999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="-2"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.22038933634757996" green="0.061844430863857269" blue="0.28159031271934509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xjx-pE-51t" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="6hh-fQ-PeS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bOh-nY-Vhm" secondAttribute="bottom" constant="80" id="Oyv-IW-PbK"/>
                             <constraint firstAttribute="right" secondItem="xjx-pE-51t" secondAttribute="right" id="UNG-OY-Huc"/>
                             <constraint firstAttribute="bottom" secondItem="xjx-pE-51t" secondAttribute="bottom" id="YcJ-Jd-M8t"/>
+                            <constraint firstItem="bOh-nY-Vhm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l3d-eI-XxK"/>
                             <constraint firstItem="xjx-pE-51t" firstAttribute="left" secondItem="Ze5-6b-2t3" secondAttribute="left" id="lwE-4Y-afu"/>
+                            <constraint firstAttribute="trailing" secondItem="bOh-nY-Vhm" secondAttribute="trailing" constant="16" id="unz-j3-4eg"/>
                         </constraints>
                     </view>
                 </viewController>

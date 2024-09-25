@@ -57,6 +57,17 @@
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlo-98-0aO">
+                                <rect key="frame" x="32" y="157.5" width="311" height="132"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.088975694440000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">FLINO
+VISIONS</string>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="53"/>
+                                <color key="textColor" red="0.2236862889" green="0.12508732080000001" blue="0.65508520599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.99754136800000004" green="0.43876111509999999" blue="0.76065701249999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="-2"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0O5-fc-UVC"/>
                         <color key="backgroundColor" red="0.21937248110771179" green="0.06199251115322113" blue="0.28109219670295715" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,9 +78,12 @@
                             <constraint firstItem="0O5-fc-UVC" firstAttribute="bottom" secondItem="1x4-4W-tDb" secondAttribute="bottom" constant="64" id="SEU-9A-soM"/>
                             <constraint firstItem="CFi-V2-Rth" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="32" id="Utk-kF-UXw"/>
                             <constraint firstItem="0O5-fc-UVC" firstAttribute="trailing" secondItem="CFi-V2-Rth" secondAttribute="trailing" constant="32" id="atG-Zw-CYY"/>
+                            <constraint firstItem="zlo-98-0aO" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="32" id="b5s-R0-21p"/>
+                            <constraint firstItem="zlo-98-0aO" firstAttribute="top" secondItem="CFi-V2-Rth" secondAttribute="bottom" constant="40" id="cC5-yK-NfK"/>
                             <constraint firstItem="0O5-fc-UVC" firstAttribute="trailing" secondItem="1x4-4W-tDb" secondAttribute="trailing" constant="32" id="epv-wS-0lQ"/>
                             <constraint firstItem="CFi-V2-Rth" firstAttribute="top" secondItem="FhP-YF-qCC" secondAttribute="bottom" constant="8" id="gnF-tR-Hqm"/>
                             <constraint firstItem="iUP-ua-azO" firstAttribute="left" secondItem="Hcx-dq-XbK" secondAttribute="left" id="i4h-Kn-elc"/>
+                            <constraint firstItem="0O5-fc-UVC" firstAttribute="trailing" secondItem="zlo-98-0aO" secondAttribute="trailing" constant="32" id="iTv-uA-YNC"/>
                             <constraint firstItem="FhP-YF-qCC" firstAttribute="top" secondItem="0O5-fc-UVC" secondAttribute="top" constant="32" id="pTS-85-zsa"/>
                             <constraint firstItem="iUP-ua-azO" firstAttribute="top" secondItem="Hcx-dq-XbK" secondAttribute="top" id="tDP-IX-Hh1"/>
                             <constraint firstItem="1x4-4W-tDb" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="32" id="txb-We-0SF"/>

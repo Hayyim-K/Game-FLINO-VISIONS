@@ -444,7 +444,7 @@
 				CODE_SIGN_ENTITLEMENTS = Game/Game.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BH26MDT64T;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Game/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Flino Visions";
@@ -463,7 +463,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinovi.sions;
 				PRODUCT_NAME = Game;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -485,7 +485,7 @@
 				CODE_SIGN_ENTITLEMENTS = Game/Game.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BH26MDT64T;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Game/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Flino Visions";
@@ -504,7 +504,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinovi.sions;
 				PRODUCT_NAME = Game;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
