@@ -31,6 +31,11 @@
 		6FB74FC62CA422A300CC0546 /* Level8Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FBC2CA422A300CC0546 /* Level8Scene.sks */; };
 		6FB74FC92CA4251100CC0546 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB74FC82CA4251100CC0546 /* GameScene.swift */; };
 		6FB74FCA2CA4251100CC0546 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FC72CA4251100CC0546 /* GameScene.sks */; };
+		6FB74FCC2CA43C5000CC0546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB74FCB2CA43C5000CC0546 /* SceneDelegate.swift */; };
+		6FB74FD02CA43D1500CC0546 /* UpdateLevelsOnOldVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB74FCF2CA43D1500CC0546 /* UpdateLevelsOnOldVersion.swift */; };
+		6FB74FD12CA43D1500CC0546 /* ConfigDbConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB74FCD2CA43D1500CC0546 /* ConfigDbConnector.swift */; };
+		6FB74FD22CA43D1500CC0546 /* LevelDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB74FCE2CA43D1500CC0546 /* LevelDownloader.swift */; };
+		6FB74FD72CA473EC00CC0546 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FD62CA473EC00CC0546 /* info.plist */; };
 		6FD98B812C97634500D13A10 /* wildFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FD98B802C97634500D13A10 /* wildFire.sks */; };
 		6FD98B852C97A49300D13A10 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD98B842C97A49300D13A10 /* PhysicsCategory.swift */; };
 		6FD98B882C98067E00D13A10 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FD98B862C98067E00D13A10 /* smoke.sks */; };
@@ -67,6 +72,11 @@
 		6FB74FBD2CA422A300CC0546 /* Level9Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level9Scene.sks; sourceTree = "<group>"; };
 		6FB74FC72CA4251100CC0546 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		6FB74FC82CA4251100CC0546 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		6FB74FCB2CA43C5000CC0546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6FB74FCD2CA43D1500CC0546 /* ConfigDbConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDbConnector.swift; sourceTree = "<group>"; };
+		6FB74FCE2CA43D1500CC0546 /* LevelDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDownloader.swift; sourceTree = "<group>"; };
+		6FB74FCF2CA43D1500CC0546 /* UpdateLevelsOnOldVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLevelsOnOldVersion.swift; sourceTree = "<group>"; };
+		6FB74FD62CA473EC00CC0546 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		6FD98B802C97634500D13A10 /* wildFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = wildFire.sks; sourceTree = "<group>"; };
 		6FD98B842C97A49300D13A10 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		6FD98B862C98067E00D13A10 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
@@ -115,20 +125,32 @@
 				6FD98B982C9A29AA00D13A10 /* StorageManager.swift */,
 				6F80DFFF2C9CA99F00D86FF6 /* LevelManager.swift */,
 				6F80DFF92C9C767C00D86FF6 /* LevelSceneClasses.swift */,
-				6FF7CD812CA1A5E7005118B6 /* LevelScenes */,
+				6F7ADA00272134AE005931E8 /* Main.storyboard */,
+				6F7ADA05272134B1005931E8 /* LaunchScreen.storyboard */,
 				6F7AD9FE272134AE005931E8 /* GameViewController.swift */,
 				6F80DFF12C9AF8DF00D86FF6 /* BaseLevelScene.swift */,
 				6FA7E08E2C94E86200BA9982 /* MenuViewController.swift */,
-				6F7ADA00272134AE005931E8 /* Main.storyboard */,
-				6F7ADA05272134B1005931E8 /* LaunchScreen.storyboard */,
+				6FF7CD812CA1A5E7005118B6 /* LevelScenes */,
+				6FB74FC82CA4251100CC0546 /* GameScene.swift */,
 				6F7ADA03272134B1005931E8 /* Assets.xcassets */,
 				6FD98B8E2C98CF2500D13A10 /* Particles */,
 				6F7AD9F6272134AE005931E8 /* AppDelegate.swift */,
+				6FB74FCB2CA43C5000CC0546 /* SceneDelegate.swift */,
 				6F7ADA0D2721353E005931E8 /* Game.entitlements */,
-				6FB74FC72CA4251100CC0546 /* GameScene.sks */,
-				6FB74FC82CA4251100CC0546 /* GameScene.swift */,
+				6FB74FD62CA473EC00CC0546 /* info.plist */,
+				6FB74FD32CA43D2500CC0546 /* ConfigurationFiles */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		6FB74FD32CA43D2500CC0546 /* ConfigurationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6FB74FCD2CA43D1500CC0546 /* ConfigDbConnector.swift */,
+				6FB74FCE2CA43D1500CC0546 /* LevelDownloader.swift */,
+				6FB74FCF2CA43D1500CC0546 /* UpdateLevelsOnOldVersion.swift */,
+			);
+			path = ConfigurationFiles;
 			sourceTree = "<group>";
 		};
 		6FD98B8E2C98CF2500D13A10 /* Particles */ = {
@@ -156,6 +178,7 @@
 				6FB74FBC2CA422A300CC0546 /* Level8Scene.sks */,
 				6FB74FBD2CA422A300CC0546 /* Level9Scene.sks */,
 				6F80DFF72C9B304700D86FF6 /* BaseLevelScene.sks */,
+				6FB74FC72CA4251100CC0546 /* GameScene.sks */,
 			);
 			path = LevelScenes;
 			sourceTree = "<group>";
@@ -221,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FB74FD72CA473EC00CC0546 /* info.plist in Resources */,
 				6F7ADA02272134AE005931E8 /* Main.storyboard in Resources */,
 				6FD98B942C99C7F200D13A10 /* Actions.sks in Resources */,
 				6FD98B812C97634500D13A10 /* wildFire.sks in Resources */,
@@ -258,8 +282,12 @@
 				6F80DFF22C9AF8DF00D86FF6 /* BaseLevelScene.swift in Sources */,
 				6FB74FC92CA4251100CC0546 /* GameScene.swift in Sources */,
 				6F80DFF62C9B1C8F00D86FF6 /* UILabel + Extension.swift in Sources */,
+				6FB74FCC2CA43C5000CC0546 /* SceneDelegate.swift in Sources */,
 				6F69DDAA2CA1B2420076F4B4 /* GravitationDirections.swift in Sources */,
 				6FA7E08F2C94E86300BA9982 /* MenuViewController.swift in Sources */,
+				6FB74FD02CA43D1500CC0546 /* UpdateLevelsOnOldVersion.swift in Sources */,
+				6FB74FD12CA43D1500CC0546 /* ConfigDbConnector.swift in Sources */,
+				6FB74FD22CA43D1500CC0546 /* LevelDownloader.swift in Sources */,
 				6FD98B992C9A29AA00D13A10 /* StorageManager.swift in Sources */,
 				6F80DFFA2C9C767C00D86FF6 /* LevelSceneClasses.swift in Sources */,
 			);
@@ -418,26 +446,30 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BH26MDT64T;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Game/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Flino Visions";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This app tracks your IDFA (Identifier for Advertisers) and transmits it to Appsflyer.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = b2banalytica.FlinoVisions;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flinovi.sions;
 				PRODUCT_NAME = Game;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -455,26 +487,30 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BH26MDT64T;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Game/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Flino Visions";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This app tracks your IDFA (Identifier for Advertisers) and transmits it to Appsflyer.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = b2banalytica.FlinoVisions;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flinovi.sions;
 				PRODUCT_NAME = Game;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

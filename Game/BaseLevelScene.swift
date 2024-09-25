@@ -215,7 +215,7 @@ class BaseLevelScene: SKScene {
         addChild(background)
     }
     
-    func setCloud(position: CGPoint, isStorm: Bool = false) {
+    private func setCloud(position: CGPoint, isStorm: Bool = false) {
         
         let cloudType = !isStorm ?
         clouds.randomElement()! :
@@ -243,7 +243,7 @@ class BaseLevelScene: SKScene {
         addChild(cloud)
     }
     
-    func setFire(on position: CGPoint) {
+    private func setFire(on position: CGPoint) {
         if let wildFire = SKEmitterNode(fileNamed: "wildFire") {
             wildFire.position = position
             wildFire.particleSize = CGSize(
@@ -269,7 +269,7 @@ class BaseLevelScene: SKScene {
         }
     }
     
-    func setSmoke(on position: CGPoint) {
+    private func setSmoke(on position: CGPoint) {
         if let smoke = SKEmitterNode(fileNamed: "smoke") {
             smoke.position = position
             smoke.particleSize = CGSize(
@@ -295,7 +295,7 @@ class BaseLevelScene: SKScene {
         }
     }
     
-    func setRain(on position: CGPoint) {
+    private func setRain(on position: CGPoint) {
         if let rain = SKEmitterNode(fileNamed: "rain") {
             rain.position = position
             rain.particleSize = CGSize(
@@ -314,7 +314,7 @@ class BaseLevelScene: SKScene {
         }
     }
     
-    func setSteam(on position: CGPoint) {
+    private func setSteam(on position: CGPoint) {
         if let steam = SKEmitterNode(fileNamed: "boil") {
             steam.position = position
             steam.particleSize = CGSize(
@@ -333,7 +333,7 @@ class BaseLevelScene: SKScene {
         }
     }
     
-    func setAim(on position: CGPoint) {
+    private func setAim(on position: CGPoint) {
         let aim = SKSpriteNode(
             color: .clear,
             size: CGSize(
@@ -364,7 +364,7 @@ class BaseLevelScene: SKScene {
     
     
     
-    func setBoard() {
+    private func setBoard() {
         
         let minYPos =  -frame.height / 2 + 800
         
@@ -395,7 +395,7 @@ class BaseLevelScene: SKScene {
         setFrame()
     }
     
-    func setFrame() {
+    private func setFrame() {
         physicsBody = SKPhysicsBody(
             edgeLoopFrom: frame.inset(
                 by: UIEdgeInsets(
@@ -408,7 +408,7 @@ class BaseLevelScene: SKScene {
         )
     }
     
-    func setDrop() {
+    private func setDrop() {
         drop?.removeFromParent()
         
         score += 1
@@ -555,7 +555,7 @@ class BaseLevelScene: SKScene {
         }
     }
     
-    @objc func turbulenceFlowButtonTapped(_ notification: Notification) {
+    @objc private func turbulenceFlowButtonTapped(_ notification: Notification) {
         
         let tag = notification.userInfo!["tag"] as! Int
         
@@ -619,7 +619,7 @@ class BaseLevelScene: SKScene {
         
     }
     
-    @objc func refreshDrop() {
+    @objc private func refreshDrop() {
         
         score -= evaPrice
         
@@ -634,10 +634,6 @@ class BaseLevelScene: SKScene {
         
         dropIsActive = false
         setDrop()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
     }
     
     deinit {

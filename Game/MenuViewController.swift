@@ -14,6 +14,15 @@ class MenuViewController: UIViewController {
     
     private let uD = StorageManager.shared
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let userInfo = uD.fatchStatistics()
+        
+        bestScoreLabel.text = "BEST SCORE: \(userInfo.bestScore)"
+        lastScoreLabel.text = "LAST SCORE: \(userInfo.score)"
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let userInfo = uD.fatchStatistics()
@@ -22,16 +31,6 @@ class MenuViewController: UIViewController {
         lastScoreLabel.text = "LAST SCORE: \(userInfo.score)"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func playButtonPressed() {
         UISelectionFeedbackGenerator().selectionChanged()

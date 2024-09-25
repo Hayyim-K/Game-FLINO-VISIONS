@@ -12,7 +12,7 @@
         <!--Menu View Controller-->
         <scene sceneID="7ki-4c-uGh">
             <objects>
-                <viewController id="2nQ-EV-3ZM" customClass="MenuViewController" customModule="Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2nQ-EV-3ZM" customClass="MenuViewController" customModule="Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hcx-dq-XbK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,13 +57,6 @@
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cloud-4" translatesAutoresizingMaskIntoConstraints="NO" id="lOp-aI-14z">
-                                <rect key="frame" x="-138" y="105.5" width="513" height="456.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="456.5" id="1OC-vj-tw3"/>
-                                    <constraint firstAttribute="width" constant="513" id="eEg-PJ-LRA"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0O5-fc-UVC"/>
                         <color key="backgroundColor" red="0.21937248110771179" green="0.06199251115322113" blue="0.28109219670295715" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,18 +70,11 @@
                             <constraint firstItem="0O5-fc-UVC" firstAttribute="trailing" secondItem="1x4-4W-tDb" secondAttribute="trailing" constant="32" id="epv-wS-0lQ"/>
                             <constraint firstItem="CFi-V2-Rth" firstAttribute="top" secondItem="FhP-YF-qCC" secondAttribute="bottom" constant="8" id="gnF-tR-Hqm"/>
                             <constraint firstItem="iUP-ua-azO" firstAttribute="left" secondItem="Hcx-dq-XbK" secondAttribute="left" id="i4h-Kn-elc"/>
-                            <constraint firstItem="lOp-aI-14z" firstAttribute="centerX" secondItem="Hcx-dq-XbK" secondAttribute="centerX" constant="-69" id="mVZ-b5-728"/>
                             <constraint firstItem="FhP-YF-qCC" firstAttribute="top" secondItem="0O5-fc-UVC" secondAttribute="top" constant="32" id="pTS-85-zsa"/>
-                            <constraint firstItem="lOp-aI-14z" firstAttribute="centerY" secondItem="Hcx-dq-XbK" secondAttribute="centerY" id="s78-JK-hdT"/>
                             <constraint firstItem="iUP-ua-azO" firstAttribute="top" secondItem="Hcx-dq-XbK" secondAttribute="top" id="tDP-IX-Hh1"/>
                             <constraint firstItem="1x4-4W-tDb" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="32" id="txb-We-0SF"/>
                             <constraint firstItem="FhP-YF-qCC" firstAttribute="leading" secondItem="0O5-fc-UVC" secondAttribute="leading" constant="32" id="uoE-gk-dAh"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="lOp-aI-14z"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="bestScoreLabel" destination="FhP-YF-qCC" id="qbC-eR-5cO"/>
@@ -139,7 +125,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" imagePlacement="top" subtitle="⬈" imagePadding="6" titlePadding="-11" cornerStyle="capsule" titleAlignment="center">
-                                                            <imageReference key="image" image="water.waves.and.arrow.up" catalog="system" symbolScale="large" renderingMode="template" variableValue="1"/>
+                                                            <imageReference key="image" image="water.waves.and.arrow.trianglehead.up" catalog="system" symbolScale="large" renderingMode="template" variableValue="1"/>
                                                             <backgroundConfiguration key="background" image="Rectangle 952" strokeWidth="0.0" strokeOutset="0.0">
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </backgroundConfiguration>
@@ -166,16 +152,16 @@ FLOW</string>
                                                         </constraints>
                                                         <color key="tintColor" red="0.04823166877" green="0.88042956589999999" blue="0.066577248280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="bottom" title="EVAPORATION" imagePadding="6" cornerStyle="large" titleAlignment="center">
-                                                            <imageReference key="image" image="arrow.triangle.2.circlepath.icloud.fill" catalog="system" symbolScale="large"/>
+                                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="bottom" title="EVAPORATION" imagePadding="2" cornerStyle="large" titleAlignment="center">
+                                                            <imageReference key="image" image="arrow.trianglehead.2.clockwise.rotate.90.icloud.fill" catalog="system" symbolScale="large"/>
                                                             <backgroundConfiguration key="background" image="Rectangle 952" strokeWidth="0.0" strokeOutset="0.0">
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </backgroundConfiguration>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default" weight="regular"/>
                                                             <fontDescription key="titleFontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="10"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="evaporationButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="1HA-ZY-gZa"/>
-                                                            <action selector="playButtonPressed" destination="2nQ-EV-3ZM" eventType="touchUpInside" id="vgf-tA-qCm"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVA: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoM-qT-Xfp">
@@ -206,7 +192,7 @@ FLOW</string>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" imagePlacement="top" subtitle="⬉" imagePadding="6" titlePadding="-11" cornerStyle="capsule" titleAlignment="center">
-                                                            <imageReference key="image" image="water.waves.and.arrow.up" catalog="system" symbolScale="large" renderingMode="template" variableValue="1"/>
+                                                            <imageReference key="image" image="water.waves.and.arrow.trianglehead.up" catalog="system" symbolScale="large" renderingMode="template" variableValue="1"/>
                                                             <backgroundConfiguration key="background" image="Rectangle 952" strokeWidth="0.0" strokeOutset="0.0">
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </backgroundConfiguration>
@@ -244,7 +230,7 @@ FLOW</string>
                             <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jYf-b8-ULU">
                                 <rect key="frame" x="32" y="40" width="311" height="28"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-Tq-Cys">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 100000" textAlignment="right" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-Tq-Cys">
                                         <rect key="frame" x="0.0" y="0.0" width="175.5" height="28"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.088975694444444448" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="22"/>
@@ -316,9 +302,8 @@ FLOW</string>
         <image name="Rectangle 951" width="750" height="250"/>
         <image name="Rectangle 952" width="250" height="250"/>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
-        <image name="arrow.triangle.2.circlepath.icloud.fill" catalog="system" width="128" height="90"/>
+        <image name="arrow.trianglehead.2.clockwise.rotate.90.icloud.fill" catalog="system" width="128" height="90"/>
         <image name="backGround" width="621" height="1344"/>
-        <image name="cloud-4" width="827" height="456.5"/>
-        <image name="water.waves.and.arrow.up" catalog="system" width="128" height="102"/>
+        <image name="water.waves.and.arrow.trianglehead.up" catalog="system" width="128" height="102"/>
     </resources>
 </document>

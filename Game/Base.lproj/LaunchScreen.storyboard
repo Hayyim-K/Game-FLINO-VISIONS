@@ -19,22 +19,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="backGround" translatesAutoresizingMaskIntoConstraints="NO" id="xjx-pE-51t">
                                 <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" fixedFrame="YES" image="cloud-4" translatesAutoresizingMaskIntoConstraints="NO" id="vUJ-F4-ZRj">
-                                <rect key="frame" x="-268" y="125" width="892" height="746"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud-1" id="zsv-pg-3tm" userLabel="cloud-1_">
-                                <rect key="frame" x="-26" y="212" width="706" height="622"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud-5" id="Q55-yw-Xy3">
-                                <rect key="frame" x="-196" y="288" width="747" height="648"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud-2" id="hPf-Rc-5Mi">
-                                <rect key="frame" x="-235" y="375" width="910" height="786"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.22038933634757996" green="0.061844430863857269" blue="0.28159031271934509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,9 +37,5 @@
     </scenes>
     <resources>
         <image name="backGround" width="621" height="1344"/>
-        <image name="cloud-1" width="827" height="427.5"/>
-        <image name="cloud-2" width="827" height="463.5"/>
-        <image name="cloud-4" width="827" height="456.5"/>
-        <image name="cloud-5" width="827" height="435"/>
     </resources>
 </document>

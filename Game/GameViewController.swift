@@ -39,15 +39,6 @@ class GameViewController: UIViewController {
         
         skView.backgroundColor = .clear
         
-//        if let backGroundImage = UIImage(named: "backGround") {
-//            let backGround = UIImageView(image: backGroundImage)
-//            backGround.contentMode = .scaleAspectFill
-//            
-//            view.addSubview(backGround)
-//            view.sendSubviewToBack(backGround)
-//            
-//        }
-        
         userInfo.bestScore = uD.fatchStatistics().bestScore
         uD.save(userInfo)
         
