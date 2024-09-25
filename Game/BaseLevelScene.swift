@@ -51,7 +51,9 @@ class BaseLevelScene: SKScene {
     var deviationByX: Int = 100
     var deviationByY: Int = 1000
     
-    var bgColor: UIColor = #colorLiteral(red: 0.702839592, green: 0.1938713611, blue: 0.9012210876, alpha: 0.55)
+    //    var bgColor: UIColor = #colorLiteral(red: 0.702839592, green: 0.1938713611, blue: 0.9012210876, alpha: 0.55)
+    var bgColor: UIColor = .clear
+    
     
     private var gravitationDirection: GravitationDirections = .down
     
@@ -103,12 +105,14 @@ class BaseLevelScene: SKScene {
         
         xGravity += 1
         xGravity -= 1
+        score -= 1
+
         
         if isGravityDiviation, isFixedGravity {
             Timer.scheduledTimer(
                 withTimeInterval: 10,
                 repeats: true) { [weak self] _ in
-                    self?.setGravityDistination() 
+                    self?.setGravityDistination()
                 }
         }
         
@@ -167,7 +171,7 @@ class BaseLevelScene: SKScene {
                 ]
             )
         }
-
+        
         if isGravityDiviation, isFixedGravity {
             physicsWorld.gravity = CGVector(
                 dx: xGravity,
@@ -181,7 +185,7 @@ class BaseLevelScene: SKScene {
             )
             
         }
-
+        
     }
     
     private func configureGravityDirection(_ x: Double, _ y: Double) {
@@ -199,12 +203,15 @@ class BaseLevelScene: SKScene {
     }
     
     func setBackGround() {
-        let background = SKSpriteNode(
-            color: bgColor,
-            size: CGSize(width: frame.width, height: frame.height)
-        )
+        
+        let background = SKSpriteNode(imageNamed: "backGround")
+        
+        //        scene?.backgroundColor = . clear
+        //        backgroundColor = .clear
         background.position = CGPoint(x: frame.midX, y: frame.midY)
+        background.size = CGSize(width: frame.width, height: frame.height)
         background.zPosition = -100
+        
         addChild(background)
     }
     
@@ -254,6 +261,8 @@ class BaseLevelScene: SKScene {
             wildFire.physicsBody?.collisionBitMask = PhysicsCategory.none
             wildFire.physicsBody?.contactTestBitMask = PhysicsCategory.drop
             
+            //            wildFire.zPosition = 0
+            
             addChild(wildFire)
             
             wildFiersCounter += 1
@@ -277,6 +286,8 @@ class BaseLevelScene: SKScene {
             smoke.physicsBody?.categoryBitMask = PhysicsCategory.aim
             smoke.physicsBody?.collisionBitMask = PhysicsCategory.none
             smoke.physicsBody?.contactTestBitMask = PhysicsCategory.drop
+            
+            //            smoke.zPosition = 0
             
             addChild(smoke)
             
@@ -344,6 +355,8 @@ class BaseLevelScene: SKScene {
         aim.physicsBody?.collisionBitMask = PhysicsCategory.none
         aim.physicsBody?.contactTestBitMask = PhysicsCategory.drop
         
+        //        aim.zPosition = 0
+        
         addChild(aim)
         
         wildFiersCounter += 1
@@ -353,7 +366,7 @@ class BaseLevelScene: SKScene {
     
     func setBoard() {
         
-        let minYPos =  -frame.height / 2 + 600
+        let minYPos =  -frame.height / 2 + 800
         
         for range in stride(from: maxCloudsInRange, to: minCloudsInRange - 1, by: -1) {
             
@@ -386,7 +399,7 @@ class BaseLevelScene: SKScene {
         physicsBody = SKPhysicsBody(
             edgeLoopFrom: frame.inset(
                 by: UIEdgeInsets(
-                    top: 330,
+                    top: 530,
                     left: 1,
                     bottom: 50,
                     right: 1
@@ -403,13 +416,13 @@ class BaseLevelScene: SKScene {
         
         guard !dropIsActive else { return }
         
-        drop = SKSpriteNode(imageNamed: "drop")
+        drop = SKSpriteNode(imageNamed: "newBall")
         guard let drop = drop else { return }
         drop.physicsBody = SKPhysicsBody(
-            texture: SKTexture(imageNamed: "drop"),
+            texture: SKTexture(imageNamed: "newBall"),
             size: CGSize(
                 width: dropDiameter,
-                height: dropDiameter * 1.37
+                height: dropDiameter
             )
         )
         drop.physicsBody?.affectedByGravity = true
@@ -428,25 +441,16 @@ class BaseLevelScene: SKScene {
         )
         drop.size = CGSize(
             width: dropDiameter,
-            height: dropDiameter * 1.37
+            height: dropDiameter
         )
+        //        drop.zPosition = 0
         
         addChild(drop)
         
         dropIsActive = true
     }
     
-//    private func setTimer() {
-//        
-//        if timer != nil {
-//            print(100000000011001111)
-//            timer = Timer.scheduledTimer(
-//                withTimeInterval: 10,
-//                repeats: true) { [weak self] _ in
-//                    self?.setGravityDistination()
-//                }
-//        }
-//    }
+    
     
     private func setGravityDistination() {
         xGravity = [8, -8, 0, 0, 0, 0].randomElement()!
@@ -473,9 +477,24 @@ class BaseLevelScene: SKScene {
         label.zRotation = CGFloat.random(in: -30...30) * .pi / 180
         
         label.text = text
-        label.zPosition = 1
+        label.zPosition = 10
         label.horizontalAlignmentMode = .left
+        
+        let shadow = SKLabelNode(fontNamed: "HelveticaNeue-Light")
+        shadow.fontSize = size
+        shadow.fontColor = .black
+        shadow.position = CGPoint(
+            x: label.position.x + 1,
+            y: label.position.y + 1
+        )
+        shadow.zPosition = label.zPosition - 1
+        shadow.zRotation = label.zRotation
+        
+        shadow.text = text
+        shadow.horizontalAlignmentMode = .left
+        
         addChild(label)
+        addChild(shadow)
         
         
         let moveUp = SKAction.moveBy(x: .random(in: -10...10), y: 100, duration: 0.5)
@@ -504,6 +523,7 @@ class BaseLevelScene: SKScene {
         )
         
         label.run(sequence)
+        shadow.run(sequence)
     }
     
     private func setCollision(with cloud: SKNode?) {
@@ -584,11 +604,6 @@ class BaseLevelScene: SKScene {
             )
         }
         
-        print("""
-impulse: \(impulse)
-gravity: x:\(xGravity), y:\(yGravity)
-""")
-        
         drop?.physicsBody!.applyImpulse(impulse)
         
         score -= tFPrice
@@ -601,7 +616,7 @@ gravity: x:\(xGravity), y:\(yGravity)
             text: "-\(tFPrice)",
             color: .red
         )
-
+        
     }
     
     @objc func refreshDrop() {
@@ -641,13 +656,13 @@ extension BaseLevelScene: SKPhysicsContactDelegate {
         
         // collisions with fires
         if bodyB.categoryBitMask == PhysicsCategory.drop &&
-            bodyA.categoryBitMask == PhysicsCategory.aim
-//            ||
-//            bodyB.categoryBitMask == PhysicsCategory.drop &&
-        //            bodyA.categoryBitMask == PhysicsCategory.aim
-        {
+            bodyA.categoryBitMask == PhysicsCategory.aim ||
+            bodyA.categoryBitMask == PhysicsCategory.drop &&
+            bodyB.categoryBitMask == PhysicsCategory.aim {
             
-            if dropIsActive { dropIsActive.toggle()
+            if dropIsActive {
+                dropIsActive.toggle()
+                
                 bodyA.node?.removeFromParent()
                 bodyB.node?.removeFromParent()
                 
@@ -658,16 +673,17 @@ extension BaseLevelScene: SKPhysicsContactDelegate {
                         withTimeInterval: wildFireRestoreInterval * 1.6,
                         repeats: false) { [weak self] timer in
                             
-                            let settingPosition = CGPoint(x: position.x, y: position.y - 5)
+                            //                            let settingPosition = position
                             
                             if Bool.random() {
-                                self?.setFire(on: settingPosition)
+                                self?.setFire(on: position)
                             } else {
-                                self?.setSmoke(on: settingPosition)
+                                self?.setSmoke(on: position)
                             }
                             
                             timer.invalidate()
                         }
+                    
                     addWildFireSwitcher = 0
                 }
                 
@@ -702,6 +718,7 @@ extension BaseLevelScene: SKPhysicsContactDelegate {
         if bodyA.categoryBitMask == PhysicsCategory.drop,
            bodyB.categoryBitMask == PhysicsCategory.defaultObject
         {
+            
             if let cloudName = bodyB.node?.name {
                 currentCloudName = cloudName
             }

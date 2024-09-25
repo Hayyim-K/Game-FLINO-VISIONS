@@ -53,6 +53,8 @@ class LevelManager {
             scene.deviationByY = deviationByY
             scene.bgColor = bgColor
             
+            scene.backgroundColor = .clear
+            
             scene.scaleMode = .aspectFit
             
             view.presentScene(

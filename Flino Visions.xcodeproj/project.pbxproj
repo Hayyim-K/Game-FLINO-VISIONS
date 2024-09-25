@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		6F69DDAA2CA1B2420076F4B4 /* GravitationDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F69DDA92CA1B2420076F4B4 /* GravitationDirections.swift */; };
 		6F7AD9F7272134AE005931E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7AD9F6272134AE005931E8 /* AppDelegate.swift */; };
-		6F7AD9F9272134AE005931E8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F7AD9F8272134AE005931E8 /* GameScene.sks */; };
-		6F7AD9FD272134AE005931E8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7AD9FC272134AE005931E8 /* GameScene.swift */; };
 		6F7AD9FF272134AE005931E8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7AD9FE272134AE005931E8 /* GameViewController.swift */; };
 		6F7ADA02272134AE005931E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F7ADA00272134AE005931E8 /* Main.storyboard */; };
 		6F7ADA04272134B1005931E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F7ADA03272134B1005931E8 /* Assets.xcassets */; };
@@ -19,17 +17,21 @@
 		6F80DFF62C9B1C8F00D86FF6 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80DFF52C9B1C8F00D86FF6 /* UILabel + Extension.swift */; };
 		6F80DFF82C9B304700D86FF6 /* BaseLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F80DFF72C9B304700D86FF6 /* BaseLevelScene.sks */; };
 		6F80DFFA2C9C767C00D86FF6 /* LevelSceneClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80DFF92C9C767C00D86FF6 /* LevelSceneClasses.swift */; };
-		6F80DFFE2C9C775B00D86FF6 /* Level1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F80DFFD2C9C775B00D86FF6 /* Level1Scene.sks */; };
 		6F80E0002C9CA99F00D86FF6 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F80DFFF2C9CA99F00D86FF6 /* LevelManager.swift */; };
-		6F80E0022C9CB6D200D86FF6 /* Level2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F80E0012C9CB6D200D86FF6 /* Level2Scene.sks */; };
-		6F80E0042C9CB6D700D86FF6 /* Level3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F80E0032C9CB6D700D86FF6 /* Level3Scene.sks */; };
-		6F80E0062C9CB6DE00D86FF6 /* Level4Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F80E0052C9CB6DE00D86FF6 /* Level4Scene.sks */; };
-		6F80E0082C9CB6DF00D86FF6 /* Level5Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F80E0072C9CB6DF00D86FF6 /* Level5Scene.sks */; };
-		6F80E00A2C9CB6E100D86FF6 /* Level6Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F80E0092C9CB6E100D86FF6 /* Level6Scene.sks */; };
-		6F80E00C2C9CB6E500D86FF6 /* Level7Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F80E00B2C9CB6E500D86FF6 /* Level7Scene.sks */; };
 		6FA7E08F2C94E86300BA9982 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7E08E2C94E86200BA9982 /* MenuViewController.swift */; };
+		6FB74FB42CA41DD200CC0546 /* AppsFlyerLib-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 6FB74FB32CA41DD200CC0546 /* AppsFlyerLib-Dynamic */; };
+		6FB74FBE2CA422A300CC0546 /* Level9Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FBD2CA422A300CC0546 /* Level9Scene.sks */; };
+		6FB74FBF2CA422A300CC0546 /* Level5Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FB92CA422A300CC0546 /* Level5Scene.sks */; };
+		6FB74FC02CA422A300CC0546 /* Level6Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FBA2CA422A300CC0546 /* Level6Scene.sks */; };
+		6FB74FC12CA422A300CC0546 /* Level2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FB62CA422A300CC0546 /* Level2Scene.sks */; };
+		6FB74FC22CA422A300CC0546 /* Level7Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FBB2CA422A300CC0546 /* Level7Scene.sks */; };
+		6FB74FC32CA422A300CC0546 /* Level4Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FB82CA422A300CC0546 /* Level4Scene.sks */; };
+		6FB74FC42CA422A300CC0546 /* Level1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FB52CA422A300CC0546 /* Level1Scene.sks */; };
+		6FB74FC52CA422A300CC0546 /* Level3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FB72CA422A300CC0546 /* Level3Scene.sks */; };
+		6FB74FC62CA422A300CC0546 /* Level8Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FBC2CA422A300CC0546 /* Level8Scene.sks */; };
+		6FB74FC92CA4251100CC0546 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB74FC82CA4251100CC0546 /* GameScene.swift */; };
+		6FB74FCA2CA4251100CC0546 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FB74FC72CA4251100CC0546 /* GameScene.sks */; };
 		6FD98B812C97634500D13A10 /* wildFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FD98B802C97634500D13A10 /* wildFire.sks */; };
-		6FD98B832C97A45500D13A10 /* draft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD98B822C97A45500D13A10 /* draft.swift */; };
 		6FD98B852C97A49300D13A10 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD98B842C97A49300D13A10 /* PhysicsCategory.swift */; };
 		6FD98B882C98067E00D13A10 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FD98B862C98067E00D13A10 /* smoke.sks */; };
 		6FD98B8B2C980B3C00D13A10 /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FD98B8A2C980B3C00D13A10 /* rain.sks */; };
@@ -37,16 +39,12 @@
 		6FD98B942C99C7F200D13A10 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FD98B932C99C7F200D13A10 /* Actions.sks */; };
 		6FD98B992C9A29AA00D13A10 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD98B982C9A29AA00D13A10 /* StorageManager.swift */; };
 		6FD98B9B2C9A303A00D13A10 /* UserDataInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD98B9A2C9A303A00D13A10 /* UserDataInfo.swift */; };
-		6FF7CD7E2CA0D417005118B6 /* Level8Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FF7CD7D2CA0D417005118B6 /* Level8Scene.sks */; };
-		6FF7CD802CA0D41D005118B6 /* Level9Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6FF7CD7F2CA0D41D005118B6 /* Level9Scene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F69DDA92CA1B2420076F4B4 /* GravitationDirections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitationDirections.swift; sourceTree = "<group>"; };
 		6F7AD9F3272134AE005931E8 /* Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F7AD9F6272134AE005931E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F7AD9F8272134AE005931E8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		6F7AD9FC272134AE005931E8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		6F7AD9FE272134AE005931E8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		6F7ADA01272134AE005931E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F7ADA03272134B1005931E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,17 +54,20 @@
 		6F80DFF52C9B1C8F00D86FF6 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		6F80DFF72C9B304700D86FF6 /* BaseLevelScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BaseLevelScene.sks; sourceTree = "<group>"; };
 		6F80DFF92C9C767C00D86FF6 /* LevelSceneClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSceneClasses.swift; sourceTree = "<group>"; };
-		6F80DFFD2C9C775B00D86FF6 /* Level1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1Scene.sks; sourceTree = "<group>"; };
 		6F80DFFF2C9CA99F00D86FF6 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
-		6F80E0012C9CB6D200D86FF6 /* Level2Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2Scene.sks; sourceTree = "<group>"; };
-		6F80E0032C9CB6D700D86FF6 /* Level3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3Scene.sks; sourceTree = "<group>"; };
-		6F80E0052C9CB6DE00D86FF6 /* Level4Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4Scene.sks; sourceTree = "<group>"; };
-		6F80E0072C9CB6DF00D86FF6 /* Level5Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5Scene.sks; sourceTree = "<group>"; };
-		6F80E0092C9CB6E100D86FF6 /* Level6Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6Scene.sks; sourceTree = "<group>"; };
-		6F80E00B2C9CB6E500D86FF6 /* Level7Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level7Scene.sks; sourceTree = "<group>"; };
 		6FA7E08E2C94E86200BA9982 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		6FB74FB52CA422A300CC0546 /* Level1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1Scene.sks; sourceTree = "<group>"; };
+		6FB74FB62CA422A300CC0546 /* Level2Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2Scene.sks; sourceTree = "<group>"; };
+		6FB74FB72CA422A300CC0546 /* Level3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3Scene.sks; sourceTree = "<group>"; };
+		6FB74FB82CA422A300CC0546 /* Level4Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4Scene.sks; sourceTree = "<group>"; };
+		6FB74FB92CA422A300CC0546 /* Level5Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5Scene.sks; sourceTree = "<group>"; };
+		6FB74FBA2CA422A300CC0546 /* Level6Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6Scene.sks; sourceTree = "<group>"; };
+		6FB74FBB2CA422A300CC0546 /* Level7Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level7Scene.sks; sourceTree = "<group>"; };
+		6FB74FBC2CA422A300CC0546 /* Level8Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level8Scene.sks; sourceTree = "<group>"; };
+		6FB74FBD2CA422A300CC0546 /* Level9Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level9Scene.sks; sourceTree = "<group>"; };
+		6FB74FC72CA4251100CC0546 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		6FB74FC82CA4251100CC0546 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		6FD98B802C97634500D13A10 /* wildFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = wildFire.sks; sourceTree = "<group>"; };
-		6FD98B822C97A45500D13A10 /* draft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = draft.swift; sourceTree = "<group>"; };
 		6FD98B842C97A49300D13A10 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		6FD98B862C98067E00D13A10 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
 		6FD98B8A2C980B3C00D13A10 /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
@@ -74,8 +75,6 @@
 		6FD98B932C99C7F200D13A10 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		6FD98B982C9A29AA00D13A10 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		6FD98B9A2C9A303A00D13A10 /* UserDataInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataInfo.swift; sourceTree = "<group>"; };
-		6FF7CD7D2CA0D417005118B6 /* Level8Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level8Scene.sks; sourceTree = "<group>"; };
-		6FF7CD7F2CA0D41D005118B6 /* Level9Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level9Scene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FB74FB42CA41DD200CC0546 /* AppsFlyerLib-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,6 @@
 		6F7AD9EA272134AE005931E8 = {
 			isa = PBXGroup;
 			children = (
-				6FD98B822C97A45500D13A10 /* draft.swift */,
 				6F7AD9F5272134AE005931E8 /* Game */,
 				6F7AD9F4272134AE005931E8 /* Products */,
 			);
@@ -126,8 +125,8 @@
 				6FD98B8E2C98CF2500D13A10 /* Particles */,
 				6F7AD9F6272134AE005931E8 /* AppDelegate.swift */,
 				6F7ADA0D2721353E005931E8 /* Game.entitlements */,
-				6F7AD9F8272134AE005931E8 /* GameScene.sks */,
-				6F7AD9FC272134AE005931E8 /* GameScene.swift */,
+				6FB74FC72CA4251100CC0546 /* GameScene.sks */,
+				6FB74FC82CA4251100CC0546 /* GameScene.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -147,15 +146,15 @@
 		6FF7CD812CA1A5E7005118B6 /* LevelScenes */ = {
 			isa = PBXGroup;
 			children = (
-				6F80DFFD2C9C775B00D86FF6 /* Level1Scene.sks */,
-				6F80E0012C9CB6D200D86FF6 /* Level2Scene.sks */,
-				6F80E0032C9CB6D700D86FF6 /* Level3Scene.sks */,
-				6F80E0052C9CB6DE00D86FF6 /* Level4Scene.sks */,
-				6F80E0072C9CB6DF00D86FF6 /* Level5Scene.sks */,
-				6F80E0092C9CB6E100D86FF6 /* Level6Scene.sks */,
-				6F80E00B2C9CB6E500D86FF6 /* Level7Scene.sks */,
-				6FF7CD7D2CA0D417005118B6 /* Level8Scene.sks */,
-				6FF7CD7F2CA0D41D005118B6 /* Level9Scene.sks */,
+				6FB74FB52CA422A300CC0546 /* Level1Scene.sks */,
+				6FB74FB62CA422A300CC0546 /* Level2Scene.sks */,
+				6FB74FB72CA422A300CC0546 /* Level3Scene.sks */,
+				6FB74FB82CA422A300CC0546 /* Level4Scene.sks */,
+				6FB74FB92CA422A300CC0546 /* Level5Scene.sks */,
+				6FB74FBA2CA422A300CC0546 /* Level6Scene.sks */,
+				6FB74FBB2CA422A300CC0546 /* Level7Scene.sks */,
+				6FB74FBC2CA422A300CC0546 /* Level8Scene.sks */,
+				6FB74FBD2CA422A300CC0546 /* Level9Scene.sks */,
 				6F80DFF72C9B304700D86FF6 /* BaseLevelScene.sks */,
 			);
 			path = LevelScenes;
@@ -205,6 +204,9 @@
 				Base,
 			);
 			mainGroup = 6F7AD9EA272134AE005931E8;
+			packageReferences = (
+				6FB74FB22CA41DD200CC0546 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */,
+			);
 			productRefGroup = 6F7AD9F4272134AE005931E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,22 +224,22 @@
 				6F7ADA02272134AE005931E8 /* Main.storyboard in Resources */,
 				6FD98B942C99C7F200D13A10 /* Actions.sks in Resources */,
 				6FD98B812C97634500D13A10 /* wildFire.sks in Resources */,
-				6FF7CD7E2CA0D417005118B6 /* Level8Scene.sks in Resources */,
-				6F80E00C2C9CB6E500D86FF6 /* Level7Scene.sks in Resources */,
-				6F80E0062C9CB6DE00D86FF6 /* Level4Scene.sks in Resources */,
 				6FD98B8B2C980B3C00D13A10 /* rain.sks in Resources */,
-				6F7AD9F9272134AE005931E8 /* GameScene.sks in Resources */,
-				6F80DFFE2C9C775B00D86FF6 /* Level1Scene.sks in Resources */,
 				6FD98B882C98067E00D13A10 /* smoke.sks in Resources */,
+				6FB74FCA2CA4251100CC0546 /* GameScene.sks in Resources */,
 				6F7ADA04272134B1005931E8 /* Assets.xcassets in Resources */,
 				6FD98B8D2C982C8000D13A10 /* boil.sks in Resources */,
-				6F80E0042C9CB6D700D86FF6 /* Level3Scene.sks in Resources */,
-				6FF7CD802CA0D41D005118B6 /* Level9Scene.sks in Resources */,
-				6F80E0022C9CB6D200D86FF6 /* Level2Scene.sks in Resources */,
-				6F80E0082C9CB6DF00D86FF6 /* Level5Scene.sks in Resources */,
-				6F80E00A2C9CB6E100D86FF6 /* Level6Scene.sks in Resources */,
 				6F80DFF82C9B304700D86FF6 /* BaseLevelScene.sks in Resources */,
 				6F7ADA07272134B1005931E8 /* LaunchScreen.storyboard in Resources */,
+				6FB74FBE2CA422A300CC0546 /* Level9Scene.sks in Resources */,
+				6FB74FBF2CA422A300CC0546 /* Level5Scene.sks in Resources */,
+				6FB74FC02CA422A300CC0546 /* Level6Scene.sks in Resources */,
+				6FB74FC12CA422A300CC0546 /* Level2Scene.sks in Resources */,
+				6FB74FC22CA422A300CC0546 /* Level7Scene.sks in Resources */,
+				6FB74FC32CA422A300CC0546 /* Level4Scene.sks in Resources */,
+				6FB74FC42CA422A300CC0546 /* Level1Scene.sks in Resources */,
+				6FB74FC52CA422A300CC0546 /* Level3Scene.sks in Resources */,
+				6FB74FC62CA422A300CC0546 /* Level8Scene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,17 +250,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F7AD9FD272134AE005931E8 /* GameScene.swift in Sources */,
 				6F7AD9FF272134AE005931E8 /* GameViewController.swift in Sources */,
 				6FD98B9B2C9A303A00D13A10 /* UserDataInfo.swift in Sources */,
 				6F7AD9F7272134AE005931E8 /* AppDelegate.swift in Sources */,
 				6F80E0002C9CA99F00D86FF6 /* LevelManager.swift in Sources */,
 				6FD98B852C97A49300D13A10 /* PhysicsCategory.swift in Sources */,
 				6F80DFF22C9AF8DF00D86FF6 /* BaseLevelScene.swift in Sources */,
+				6FB74FC92CA4251100CC0546 /* GameScene.swift in Sources */,
 				6F80DFF62C9B1C8F00D86FF6 /* UILabel + Extension.swift in Sources */,
 				6F69DDAA2CA1B2420076F4B4 /* GravitationDirections.swift in Sources */,
 				6FA7E08F2C94E86300BA9982 /* MenuViewController.swift in Sources */,
-				6FD98B832C97A45500D13A10 /* draft.swift in Sources */,
 				6FD98B992C9A29AA00D13A10 /* StorageManager.swift in Sources */,
 				6F80DFFA2C9C767C00D86FF6 /* LevelSceneClasses.swift in Sources */,
 			);
@@ -411,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Game/Game.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -432,10 +434,13 @@
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = b2banalytica.FlinoVisions;
 				PRODUCT_NAME = Game;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Game/Game.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -465,10 +471,13 @@
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = b2banalytica.FlinoVisions;
 				PRODUCT_NAME = Game;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -494,6 +503,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6FB74FB22CA41DD200CC0546 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Dynamic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.15.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6FB74FB32CA41DD200CC0546 /* AppsFlyerLib-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FB74FB22CA41DD200CC0546 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */;
+			productName = "AppsFlyerLib-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6F7AD9EB272134AE005931E8 /* Project object */;
 }

@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>354</string>
+					<string>367</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>353</string>
+					<string>366</string>
 					<key>Timestamp</key>
-					<string>748817946.911229</string>
+					<string>748909685.198714</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -42,7 +42,7 @@
 </string>
 				<key>trailing</key>
 				<string>        
-        let minYPos =  -frame.height / 2 + 600
+        let minYPos =  -frame.height / 2 + 800
         
 </string>
 			</dict>
@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>366</string>
+					<string>379</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>365</string>
+					<string>378</string>
 					<key>Timestamp</key>
-					<string>748817946.911114</string>
+					<string>748909685.198706</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -106,13 +106,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>25</string>
+					<string>27</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>24</string>
+					<string>26</string>
 					<key>Timestamp</key>
-					<string>748792171.195841</string>
+					<string>748887353.6545219</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -135,7 +135,7 @@
     
 </string>
 				<key>trailing</key>
-				<string>
+				<string>    
     private var evaCount = 0
     private var tFCount = 0
 </string>
@@ -159,7 +159,7 @@
 					<key>StartingLineNumber</key>
 					<string>294</string>
 					<key>Timestamp</key>
-					<string>748858938.194286</string>
+					<string>748904847.478721</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -175,16 +175,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>
+				<string>            
 </string>
 				<key>leading</key>
-				<string>                xGravity = 10
-                yGravity = 10
+				<string>            xGravity = 10
+            yGravity = 10
 </string>
 				<key>trailing</key>
-				<string>                evaPrice = 50
-                tFPrice = 15
-                cloudCollisionPrice = 1
+				<string>            evaPrice = 50
+            tFPrice = 15
+            cloudCollisionPrice = 1
 </string>
 			</dict>
 			<key>title</key>
@@ -200,13 +200,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>108</string>
+					<string>112</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>107</string>
+					<string>111</string>
 					<key>Timestamp</key>
-					<string>748817946.91122</string>
+					<string>748909685.198658</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -231,7 +231,7 @@
 				<key>trailing</key>
 				<string>                withTimeInterval: 10,
                 repeats: true) { [weak self] _ in
-                    self?.setGravityDistination() 
+                    self?.setGravityDistination()
 </string>
 			</dict>
 			<key>title</key>

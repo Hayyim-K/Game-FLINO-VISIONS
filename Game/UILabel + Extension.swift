@@ -20,7 +20,7 @@ extension UILabel {
 
             UIView.animate(withDuration: 0.3, animations: {
                 self?.transform = CGAffineTransform.identity
-                self?.textColor = .black
+                self?.textColor = .white
             })
         })
     }
